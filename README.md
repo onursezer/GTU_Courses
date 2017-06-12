@@ -1,1 +1,1 @@
-# GTU_Courses
+# Gebze Technical University Homeworks
