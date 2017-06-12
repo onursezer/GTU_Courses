@@ -1,0 +1,2 @@
+ÖDEV 2
+Make an interactive Hermite spline drawing application. Two endpoints and derivatives will be specified either by mouse or by edit fields. The screen window should be of size 800x800 pixels.

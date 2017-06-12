@@ -1,0 +1,1356 @@
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+
+#define SIZE 100
+#define MAXSIZE 500
+#define TEAM_FILE "teams.bin"
+#define PLAYER_FILE "players.bin"
+#define T_STATISTIC_FILE "team_statistics.bin"
+#define P_STATISTIC_FILE "player_statistics.bin"
+#define DEBUG
+
+ 
+typedef struct{
+    char team_name[SIZE];
+    char city[SIZE];
+    char stadium[SIZE];
+    int founding_date;
+    char colors[SIZE];
+}teams_t;
+
+typedef struct{    
+    char player_name[SIZE];
+    char team_name[SIZE];
+    int birth_date;
+    char origin[SIZE];
+    char position[SIZE];
+    int salary;
+}players_t;       
+
+typedef struct{    
+    int year, points, wins, loses, draws,
+        goals_for, goals_against, goals_difference;
+    char team_name[SIZE];    
+}team_statistics_t;
+
+typedef struct{
+    int year, goals, assists, red_cards,
+        yellow_cards;
+    char player_name[SIZE];
+}player_statistics_t;
+
+
+/*           #function prototypes             */
+
+void insert_teams(FILE *bin, teams_t *teams, char *str);
+void insert_players(FILE *bin, players_t players[], char *str);
+void insert_t_statistics(FILE *bin, team_statistics_t team_statistics[], char *str);
+void insert_p_statistics(FILE *bin, player_statistics_t player_statistics[], char *str);
+void delete_teams(FILE *bin,teams_t teams[],char *str);
+void delete_players(FILE *bin,players_t players[],char *str);
+void delete_t_statistics(FILE *bin,team_statistics_t team_statistics[],char *str);
+void delete_p_statistics(FILE *bin,player_statistics_t player_statistics[],char *str);
+void update_teams(FILE *bin, teams_t teams[], char *str,char *str2);
+void update_players(FILE *bin, players_t players[], char *str,char *str2);
+void update_t_statistics(FILE *bin, team_statistics_t team_statistics[], char *str,char *str2);
+void update_p_statistics(FILE *bin, player_statistics_t player_statistics[], char *str,char *str2);
+
+void findNumberOfData(char team_file[],char player_file[],char t_team_file[],char p_player_file[],int *numberOfTeam,
+                      int *numberOfPlayer,int *numberOfTstatistics,int *numberOfPstatistics);
+
+
+
+int main(int argc,char *argv[]) {
+
+    FILE *teams_bin,*players_bin,*t_statistics,*p_statistics,
+            *file_cont,*file_cont2,*file_cont3,*file_cont4,*inp;
+            
+    char command[SIZE],str1[SIZE],str2[SIZE],str3[SIZE];
+    char *cmd;
+    int size;
+    int numberOfTeam,numberOfPlayer,numberOfTstatistics,numberOfPstatistics;
+    teams_t *teams;
+    players_t *players;
+    team_statistics_t *team_statistics;
+    player_statistics_t *player_statistics;
+
+    printf("\n   COMMANDS\n");
+    printf("-  Select\n");
+    printf("-  Where\n");
+    printf("-  Sort\n");
+    printf("-  Smart Select\n");
+    printf("-  İnsert\n");
+    printf("-  Update\n");
+    printf("-  Delete\n\n"); 
+    printf("Enter a commands:\n");
+    if(argc != 1)
+        printf("Commands were taken.\n");
+
+    teams_bin = fopen(TEAM_FILE,"rb");
+    if(teams_bin == NULL){
+        file_cont = fopen(TEAM_FILE,"wb");
+        fclose(file_cont);
+    }
+    players_bin = fopen(PLAYER_FILE,"rb");
+    if(players_bin == NULL){
+        file_cont2 = fopen(PLAYER_FILE,"wb");
+        players = (players_t *)calloc(1,sizeof(players_t));
+        printf("NULL player calloc\n");
+        fclose(file_cont2);
+    }
+    t_statistics = fopen(T_STATISTIC_FILE,"rb");
+    if(t_statistics == NULL){
+        file_cont3 = fopen(T_STATISTIC_FILE,"wb");
+        team_statistics = (team_statistics_t *)calloc(1,sizeof(team_statistics_t));
+        printf("NULL teams statistics calloc\n");
+        fclose(file_cont3);
+    }
+    p_statistics = fopen(P_STATISTIC_FILE,"rb");
+    if(p_statistics == NULL){
+        file_cont4 = fopen(P_STATISTIC_FILE,"wb");
+        player_statistics = (player_statistics_t *)calloc(1,sizeof(player_statistics_t));
+        printf("NULL player statistics calloc\n");
+        fclose(file_cont4);
+    }
+    
+
+    findNumberOfData(TEAM_FILE,PLAYER_FILE,T_STATISTIC_FILE,P_STATISTIC_FILE,&numberOfTeam,
+                          &numberOfPlayer,&numberOfTstatistics,&numberOfPstatistics);
+
+    if(teams_bin != NULL){
+        if(numberOfTeam != 0){
+            printf("teams calloc\n");
+            teams = (teams_t *)calloc(numberOfTeam+1,sizeof(teams_t));
+        }
+        else{
+            printf("teams calloc222\n");
+            teams = (teams_t *)calloc(1,sizeof(teams_t));
+        }
+    }
+    if(players_bin != NULL){
+        if(numberOfPlayer != 0) {
+            printf("player calloc\n");
+            players = (players_t *)calloc(numberOfPlayer+1,sizeof(players_t));
+        }
+        else{
+            players = (players_t *)calloc(1,sizeof(players_t));
+            printf("player calloc222\n");
+        }
+    }
+    if(t_statistics != NULL){ 
+        if(numberOfTstatistics != 0){
+            team_statistics = (team_statistics_t *)calloc(numberOfTstatistics+1,sizeof(team_statistics_t)); 
+            printf("team statistic. calloc\n");
+        }
+        else{
+            team_statistics = (team_statistics_t *)calloc(1,sizeof(team_statistics_t));
+            printf("team statistic. calloc222\n");
+        }
+    }
+    if(p_statistics != NULL){
+        if(numberOfPstatistics != 0) {
+            player_statistics = (player_statistics_t *)calloc(numberOfPstatistics+1,sizeof(player_statistics_t));
+            printf("player statistic. calloc\n");
+        }
+        else{
+            player_statistics = (player_statistics_t *)calloc(1,sizeof(player_statistics_t));
+            printf("player statistic. calloc222\n");
+        }
+    }
+
+    if(argc == 1){
+        fgets(command,SIZE,stdin);
+        size = strlen(command);
+        if(command[size-1] == '\n')
+            command[size-1] = '\0';    
+    }
+    else{
+        inp = fopen(argv[1],"r");
+        fgets(command,SIZE,inp);
+        size = strlen(command);
+        if(command[size-1] == '\n')
+            command[size-1] = '\0';                    
+    }
+    
+    cmd = strtok(command," ");
+    
+    while( strcmp(command,"q") != 0 ){
+        
+        if( strcmp(cmd,"insert") == 0 ) {
+
+            size = strlen(cmd);
+            strcpy(str1,&command[size+1]);
+            cmd = strtok(str1," ");
+            strcpy(str2,cmd);              /* insert edilecek bilgiler */
+            size = strlen(cmd);
+            strcpy(str3,&str1[size+4]);    /* teams, player, t_statistics, p_statictis*/
+                      
+
+            if(strcmp(str3,"teams") == 0){
+                teams_bin = fopen(TEAM_FILE,"rb+");                
+                insert_teams(teams_bin,teams,str2);                
+            }
+            else if(strcmp(str3,"players") == 0){
+                players_bin = fopen(PLAYER_FILE,"rb+");
+                insert_players(players_bin,players,str2);
+                                   
+            }
+            else if(strcmp(str3,"team_statistics") == 0){
+                t_statistics = fopen(T_STATISTIC_FILE,"rb+");
+                insert_t_statistics(t_statistics, team_statistics, str2);
+            }
+            else if(strcmp(str3,"player_statistics") == 0){
+                p_statistics = fopen(P_STATISTIC_FILE,"rb+");
+                insert_p_statistics(p_statistics, player_statistics, str2);
+            }
+            
+        }
+        else if( strcmp(cmd,"delete") == 0) {
+
+            size = strlen(cmd);
+            strcpy(str1,&command[size+1]);
+            strcpy(str1,&str1[7]);
+            cmd = strtok(str1," ");
+            strcpy(str1,cmd);
+            cmd = strtok(NULL," ");
+            cmd = strtok(NULL," ");
+            strcpy(str2,cmd);
+
+            #if defined (DEBUG)
+                printf("str2 : %s\n",str2);
+                printf("str1 : %s\n",str1);
+            #endif
+
+            if( strcmp(str1,"teams") == 0) {
+                teams_bin = fopen(TEAM_FILE,"rb+");
+                delete_teams(teams_bin,teams,str2);
+            } 
+            else if( strcmp(str1,"players") == 0 ) {
+                players_bin = fopen(PLAYER_FILE,"rb+");
+                delete_players(players_bin,players,str2); 
+            }
+            else if( strcmp(str1,"team_statistics") == 0 ) {
+                t_statistics = fopen(T_STATISTIC_FILE,"rb+"); 
+                delete_t_statistics(t_statistics,team_statistics,str2);
+            }
+            else if( strcmp(str1,"player_statistics") == 0 ) {
+                p_statistics = fopen(P_STATISTIC_FILE,"rb+"); 
+                delete_p_statistics(p_statistics,player_statistics,str2);
+            }   
+        }
+       else if(strcmp(cmd,"update") == 0) {
+            cmd = strtok(NULL," ");
+            strcpy(str1,cmd);
+            cmd = strtok(NULL," ");
+            cmd = strtok(NULL," ");
+            strcpy(str2,cmd);
+            cmd = strtok(NULL," ");
+            cmd = strtok(NULL," ");
+            strcpy(str3,cmd);
+            
+            #if defined (DEBUG)
+                printf("str1 : %s\n",str1);
+                printf("str2 : %s\n",str2);
+                printf("str3 : %s\n",str3);
+            #endif
+                
+            if( strcmp(str2,"teams") == 0 ){
+                teams_bin = fopen(TEAM_FILE,"rb+");
+                update_teams(teams_bin,teams,str1,str3);
+
+            }
+            if( strcmp(str2,"players") == 0 ){
+                players_bin = fopen(PLAYER_FILE,"rb+");
+                update_players(players_bin,players,str1,str3);
+            }
+            if( strcmp(str2,"team_statistics") == 0 ){
+                printf("update team_statistics e girildi \n");
+                t_statistics = fopen(T_STATISTIC_FILE,"rb+");
+                update_t_statistics(t_statistics,team_statistics,str1,str3);
+                printf("update yapildi ...\n");    
+            }
+            if( strcmp(str2,"player_statistics") == 0 ){
+                printf("update player_statistics e girildi \n");
+                p_statistics = fopen(P_STATISTIC_FILE,"rb+");
+                update_p_statistics(p_statistics,player_statistics,str1,str3);
+                printf("update yapildi ...\n");
+        
+            }
+
+                 
+        }
+
+        findNumberOfData(TEAM_FILE,PLAYER_FILE,T_STATISTIC_FILE,P_STATISTIC_FILE,&numberOfTeam,
+                          &numberOfPlayer,&numberOfTstatistics,&numberOfPstatistics);
+        if(numberOfTeam != 0){
+            teams = (teams_t *)calloc(numberOfTeam+1,sizeof(teams_t));
+            printf("while teams calloc\n");
+        }
+        if(numberOfPlayer != 0) {
+            players = (players_t *)calloc(numberOfPlayer+1,sizeof(players_t));
+            printf("while player calloc\n");
+        }
+        if(numberOfTstatistics != 0){
+            team_statistics = (team_statistics_t *)calloc(numberOfTstatistics+1,sizeof(team_statistics_t));
+            printf("while teams  statistics calloc\n");
+        }
+        if(numberOfPstatistics != 0) {
+            player_statistics = (player_statistics_t *)calloc(numberOfPstatistics+1,sizeof(player_statistics_t));
+            printf("while player statistics calloc\n");
+        }
+
+        if(argc == 1){
+            fgets(command,SIZE,stdin);
+            size = strlen(command);
+            if(command[size-1] == '\n')
+                command[size-1] = '\0';    
+        }
+        else{
+            fgets(command,SIZE,inp);
+            size = strlen(command);
+            if(command[size-1] == '\n')
+                command[size-1] = '\0';                    
+        }
+
+        cmd = strtok(command," ");
+    }             
+    free(teams);
+    free(players);
+    free(team_statistics);
+    free(player_statistics);
+}
+void findNumberOfData(char team_file[],char player_file[],char t_team_file[],char p_player_file[],int *numberOfTeam,
+                      int *numberOfPlayer,int *numberOfTstatistics,int *numberOfPstatistics)
+{
+
+    FILE *inp1,*inp2,*inp3,*inp4;
+    teams_t teams;
+    players_t players;
+    team_statistics_t team_statistics;
+    player_statistics_t player_statistics;
+    int i=0,st;
+
+    inp1 = fopen(team_file,"rb");
+    inp2 = fopen(player_file,"rb");
+    inp3 = fopen(t_team_file,"rb");
+    inp4 = fopen(p_player_file,"rb");
+    
+    for(st = fread(&teams,sizeof(teams_t),1,inp1); st !=0;
+        st = fread(&teams,sizeof(teams_t),1,inp1) )
+        i++;
+    *numberOfTeam = i;
+    i=0; 
+    for(st = fread(&players,sizeof(players_t),1,inp2); st !=0;
+        st = fread(&players,sizeof(players_t),1,inp2) )
+        i++;
+    *numberOfPlayer = i;
+    i=0;
+    for(st = fread(&team_statistics,sizeof(team_statistics_t),1,inp3); st != 0;
+        st = fread(&team_statistics,sizeof(team_statistics_t),1,inp3) )
+        i++;
+    *numberOfTstatistics = i;
+    i = 0;
+    for(st = fread(&player_statistics,sizeof(player_statistics_t),1,inp4); st != 0;
+        st = fread(&player_statistics,sizeof(player_statistics_t),1,inp4) )
+        i++;
+    *numberOfPstatistics = i;
+    #if defined(DEBUG)
+        printf("*numberOfTeam : %d\n",*numberOfTeam);
+        printf("*numberOfPlayer : %d\n",*numberOfPlayer);    
+        printf("*numberOfTstatistics : %d\n",*numberOfTstatistics);    
+        printf("*numberOfPstatistics : %d\n",*numberOfPstatistics);
+    #endif
+     
+    fclose(inp1);    
+    fclose(inp2);
+    fclose(inp3);
+    fclose(inp4);    
+}
+void insert_teams(FILE *bin,teams_t teams[],char *str)
+{
+    char *cmd;
+    int num,st,j=0,i=0,ans;
+    
+    do{
+        st = fread(&teams[j],sizeof(teams_t),1,bin);
+        if(st != 0)
+            j++;
+        if(st == 0){
+            cmd = strtok(str,",");
+            strcpy(teams[j].team_name , cmd);                      
+            for(i = 0; i < j; i++){
+                if( strcmp(teams[j].team_name,teams[i].team_name) == 0 )
+                    ans = 1;
+            }            
+        }
+    }while(st != 0);
+    
+    
+    if( ans != 1){
+
+        cmd = strtok(NULL,",");
+        strcpy(teams[j].city,cmd);
+        cmd = strtok(NULL,",");
+        strcpy(teams[j].stadium,cmd);
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        teams[j].founding_date = num;
+        cmd = strtok(NULL,",");
+        strcpy(teams[j].colors,cmd);
+        
+        fseek(bin,sizeof(teams_t)*j,SEEK_SET);   
+        fwrite(&teams[j],sizeof(teams_t),1,bin);
+   }
+    else
+        printf("Ayni takim girilemez!!\n");
+
+    fclose(bin);
+}
+void insert_players(FILE *bin,players_t players[],char *str)
+{
+    
+    char *cmd;
+    int num,st,j=0,i=0,ans;
+
+    do{
+        st = fread(&players[j],sizeof(players_t),1,bin);
+        if(st != 0)
+            j++;
+        if(st == 0){
+            cmd = strtok(str,",");
+            strcpy(players[j].player_name , cmd);                    
+            for(i = 0; i < j; i++){
+                if( strcmp(players[j].player_name,players[i].player_name) == 0 )
+                    ans = 1;
+            }            
+        }
+
+    }while(st != 0);
+    
+    
+    if( ans != 1){
+
+        cmd = strtok(NULL,",");
+        strcpy(players[j].team_name,cmd);
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        players[j].birth_date = num;
+        cmd = strtok(NULL,",");
+        strcpy(players[j].origin,cmd);
+        cmd = strtok(NULL,",");
+        strcpy(players[j].position,cmd);  
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);      
+        players[j].salary = num;
+
+        fseek(bin,sizeof(players_t)*j,SEEK_SET);   
+        fwrite(&players[j],sizeof(players_t),1,bin);
+   }
+    else
+        printf("Ayni oyuncu girilemez!!\n");
+
+    fclose(bin);
+}
+void insert_t_statistics(FILE *bin, team_statistics_t team_statistics[], char *str)
+{
+    char *cmd;
+    int num,st,j=0,i=0,ans;
+
+    do{
+        st = fread(&team_statistics[j],sizeof(team_statistics_t),1,bin);
+        if(st != 0)
+            j++;
+        if(st == 0){
+
+            cmd = strtok(str,",");
+            num = atoi(cmd);
+            team_statistics[j].year = num;
+            cmd = strtok(NULL,",");
+            strcpy(team_statistics[j].team_name, cmd);
+                    
+            for(i = 0; i < j; i++){
+                if( team_statistics[j].year == team_statistics[i].year 
+                   && strcmp(team_statistics[j].team_name, team_statistics[i].team_name) == 0)
+                    ans = 1;
+            }            
+        }
+
+    }while(st != 0);
+
+    if( ans != 1){
+
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].points = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].wins = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].loses = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].draws = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].goals_for = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].goals_against = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        team_statistics[j].goals_difference = num;
+
+        fseek(bin,sizeof(team_statistics_t)*j,SEEK_SET);   
+        fwrite(&team_statistics[j],sizeof(team_statistics_t),1,bin);
+    }
+    else
+        printf("Ayni yila ayni takim girilemez!!\n");
+ 
+    fclose(bin);
+
+}
+void insert_p_statistics(FILE *bin, player_statistics_t player_statistics[], char *str)
+{
+    char *cmd;
+    int num,st,j=0,i=0,ans;
+
+    do{
+        st = fread(&player_statistics[j],sizeof(player_statistics_t),1,bin);
+        if(st != 0)
+            j++;
+        if(st == 0){
+
+            cmd = strtok(str,",");
+            num = atoi(cmd);
+            player_statistics[j].year = num;
+            cmd = strtok(NULL,",");
+            strcpy(player_statistics[j].player_name, cmd);
+                    
+            for(i = 0; i < j; i++){
+                if( player_statistics[j].year == player_statistics[i].year 
+                   && strcmp(player_statistics[j].player_name, player_statistics[i].player_name) == 0)
+                    ans = 1;
+            }            
+        }
+
+    }while(st != 0);
+
+    if( ans != 1){
+
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        player_statistics[j].goals = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        player_statistics[j].assists = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        player_statistics[j].red_cards = num;
+        cmd = strtok(NULL,",");
+        num = atoi(cmd);
+        player_statistics[j].yellow_cards = num;
+
+
+        fseek(bin,sizeof(player_statistics_t)*j,SEEK_SET);   
+        fwrite(&player_statistics[j],sizeof(player_statistics_t),1,bin);
+    }
+    else
+        printf("Ayni yila ayni oyuncu girilemez!!\n");
+ 
+    fclose(bin);    
+}
+void delete_teams(FILE *bin,teams_t teams[],char *str)
+{
+    FILE *bin2;
+
+    char str1[SIZE],str2[SIZE];
+    char *cmd;
+    int num,st,j=0,i=0,k,l,less=1;
+
+    
+    cmd = strtok(str,"=");
+    strcpy(str1,cmd);
+    cmd = strtok(NULL,"=");
+    strcpy(str2,cmd);
+    
+    #if defined(DEBUG)
+        printf("str1 : %s\n",str1);
+        printf("str2 : %s\n",str2);
+    #endif
+
+    j = fread(teams,sizeof(teams_t),MAXSIZE,bin);
+
+    if(strcmp(str1,"team_name") == 0){
+
+         for(i = 0; i < j; i++){
+             if( strcmp(teams[i].team_name,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     teams[l] = teams[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"city") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(teams[i].city,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     teams[l] = teams[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"stadium") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(teams[i].stadium,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     teams[l] = teams[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"founding_date") == 0){                        
+         for(i = 0; i < j; i++){
+             if( teams[i].founding_date == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     teams[l] = teams[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"colors") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(teams[i].colors,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     teams[l] = teams[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    bin2 = fopen(TEAM_FILE,"wb");
+    for(i=0;i<j;i++){     
+        fwrite(&teams[i],sizeof(teams_t),1,bin2);
+    }
+    fclose(bin2);
+
+    #if defined(DEBUG)
+        i=0;
+        bin = fopen(TEAM_FILE,"rb");    
+        for(st = fread(&teams[i],sizeof(teams_t),1,bin);st!=0;
+             st = fread(&teams[i],sizeof(teams_t),1,bin) ){
+            printf("teams[%d].team_name : %s\n",i,teams[i].team_name);
+            i++;   
+        }
+        fclose(bin);
+    #endif
+
+}
+void delete_players(FILE *bin,players_t players[],char *str)
+{
+    FILE *bin2;
+
+    char str1[SIZE],str2[SIZE];
+    char *cmd;
+    int num,st,j=0,i=0,k,l,less=1;
+    
+    cmd = strtok(str,"=");
+    strcpy(str1,cmd);
+    cmd = strtok(NULL,"=");
+    strcpy(str2,cmd);
+    
+    #if defined(DEBUG)
+        printf("str1 : %s\n",str1);
+        printf("str2 : %s\n",str2);
+    #endif
+
+    j = fread(players,sizeof(players_t),MAXSIZE,bin);
+
+    if(strcmp(str1,"player_name") == 0){
+
+         for(i = 0; i < j; i++){
+             if( strcmp(players[i].player_name,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     players[l] = players[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"team_name") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(players[i].team_name,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     players[l] = players[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"birth_date") == 0){                         
+         for(i = 0; i < j; i++){
+             if( players[i].birth_date ==  atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     players[l] = players[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"origin") == 0){                        
+         for(i = 0; i < j; i++){
+             if( strcmp(players[i].origin,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     players[l] = players[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"position") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(players[i].position,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     players[l] = players[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+
+    bin2 = fopen(PLAYER_FILE,"wb");
+    for(i=0;i<j;i++){     
+        fwrite(&players[i],sizeof(players_t),1,bin2);
+    }
+    fclose(bin2);
+    
+    #if defined(DEBUG)
+        bin = fopen(PLAYER_FILE,"rb");    
+        i=0;
+        for(st = fread(&players[i],sizeof(players_t),1,bin);st!=0;
+             st = fread(&players[i],sizeof(players_t),1,bin) ){
+            printf("players[%d].player_name : %s\n",i,players[i].player_name);
+            i++;   
+        }
+        fclose(bin);
+    #endif
+}
+void delete_t_statistics(FILE *bin,team_statistics_t team_statistics[],char *str)
+{
+    FILE *bin2;
+
+    char str1[SIZE],str2[SIZE];
+    char *cmd;
+    int num,st,j=0,i=0,k,l,less=1;
+    
+    cmd = strtok(str,"=");
+    strcpy(str1,cmd);
+    cmd = strtok(NULL,"=");
+    strcpy(str2,cmd);
+    
+    #if defined(DEBUG)
+        printf("str1 : %s\n",str1);
+        printf("str2 : %s\n",str2);
+    #endif
+
+    j = fread(team_statistics,sizeof(team_statistics_t),MAXSIZE,bin);
+
+    if(strcmp(str1,"year") == 0){
+
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].year == atoi(str2) ) {
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"team_name") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(team_statistics[i].team_name,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"points") == 0){                         
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].points == atoi(str2) ) {
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"wins") == 0){                        
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].wins == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"loses") == 0){                         
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].loses == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"draws") == 0){                         
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].draws == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"goals_for") == 0){                         
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].goals_for == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"goals_against") == 0){                         
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].goals_against == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"goals_difference") == 0){                         
+         for(i = 0; i < j; i++){
+             if( team_statistics[i].goals_difference == atoi(str2) ) {
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     team_statistics[l] = team_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+
+    bin2 = fopen(T_STATISTIC_FILE,"wb");
+    for(i=0;i<j;i++){      
+        fwrite(&team_statistics[i],sizeof(team_statistics_t),1,bin2);
+    }
+    fclose(bin2);
+
+    #if defined(DEBUG)
+        i=0;
+        bin = fopen(T_STATISTIC_FILE,"rb");    
+        for(st = fread(&team_statistics[i],sizeof(team_statistics_t),1,bin);st!=0;
+             st = fread(&team_statistics[i],sizeof(team_statistics_t),1,bin) ){
+            printf("team_statistics[%d].team_name : %s\n",i,team_statistics[i].team_name);
+            i++;   
+        }
+        printf("i : %d\n",i);
+        fclose(bin);
+    #endif
+}
+void delete_p_statistics(FILE *bin,player_statistics_t player_statistics[],char *str)
+{
+    FILE *bin2;
+
+    char str1[SIZE],str2[SIZE];
+    char *cmd;
+    int num,st,j=0,i=0,k,l,less=1;
+    
+    cmd = strtok(str,"=");
+    strcpy(str1,cmd);
+    cmd = strtok(NULL,"=");
+    strcpy(str2,cmd);
+
+    #if defined(DEBUG)
+        printf("str1 : %s\n",str1);
+        printf("str2 : %s\n",str2);
+    #endif
+
+    j = fread(player_statistics,sizeof(player_statistics_t),MAXSIZE,bin);
+
+    if(strcmp(str1,"year") == 0){
+         for(i = 0; i < j; i++){
+             if( player_statistics[i].year == atoi(str2) ) {
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     player_statistics[l] = player_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"player_name") == 0){                         
+         for(i = 0; i < j; i++){
+             if( strcmp(player_statistics[i].player_name,str2) == 0 ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     player_statistics[l] = player_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"goals") == 0){                         
+         for(i = 0; i < j; i++){
+             if( player_statistics[i].goals == atoi(str2) ) {
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     player_statistics[l] = player_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+
+    }
+    else if(strcmp(str1,"assists") == 0){                       
+         for(i = 0; i < j; i++){
+             if( player_statistics[i].assists == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     player_statistics[l] = player_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"red_cards") == 0){                         
+         for(i = 0; i < j; i++){
+             if( player_statistics[i].red_cards == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     player_statistics[l] = player_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+    else if(strcmp(str1,"yellow_cards") == 0){                         
+         for(i = 0; i < j; i++){
+             if( player_statistics[i].yellow_cards == atoi(str2) ){
+                 l = i;        
+                 for(k = l+1; k < j; k++){
+                     player_statistics[l] = player_statistics[k];
+                     l = k;
+                 }
+                 j-=less;
+                 i--;   
+             }                
+        }          
+        fclose(bin);
+    }
+
+    bin2 = fopen(P_STATISTIC_FILE,"wb");
+    for(i=0;i<j;i++){      
+        fwrite(&player_statistics[i],sizeof(player_statistics_t),1,bin2);
+    }  
+    fclose(bin2);
+
+    #if defined(DEBUG)
+        i=0;
+        bin = fopen(P_STATISTIC_FILE,"rb");    
+        for(st = fread(&player_statistics[i],sizeof(player_statistics_t),1,bin);st!=0;
+             st = fread(&player_statistics[i],sizeof(player_statistics_t),1,bin) ){
+            printf("player_statistics[%d].player_name : %s\n",i,player_statistics[i].player_name);
+            i++;   
+        }
+        fclose(bin);
+    #endif
+}
+void update_teams(FILE *bin, teams_t teams[], char *str,char *str2)
+{
+
+    char str3[SIZE],str4[SIZE];
+    char *cmd;
+    int num,st,j=0,i=0,k,l,less=1;
+
+    cmd = strtok(str,",");
+    strcpy(str3,cmd);
+    cmd = strtok(NULL,",");
+    strcpy(str4,cmd);
+
+    cmd = strtok(str3,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str3,cmd);  /* takim ismi */
+
+    cmd = strtok(str4,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str4,cmd);  /* takim yili */
+
+    cmd = strtok(str2,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str2,cmd);  /* degistirilicek takimin ismi */
+     
+    #if defined(DEBUG)   
+        printf("str3 : %s  & str4 : %s\n",str3,str4);
+    #endif
+
+    for(st=fread(&teams[i],sizeof(teams_t),1,bin);st != 0;
+        st=fread(&teams[i],sizeof(teams_t),1,bin ) ){
+        if(strcmp(str2,teams[i].team_name) == 0){
+            strcpy(teams[i].team_name,str3);
+            teams[i].founding_date = atoi(str4);
+            
+        }
+        fseek(bin,sizeof(teams_t)*i,SEEK_SET);   
+        fwrite(&teams[i],sizeof(teams_t),1,bin);
+        i++;
+    }
+    fclose(bin);
+    #if defined(DEBUG)
+        i=0;
+        bin = fopen(TEAM_FILE,"rb");    
+        for(st = fread(&teams[i],sizeof(teams_t),1,bin);st!=0;
+             st = fread(&teams[i],sizeof(teams_t),1,bin) ){
+            printf("teams[%d].team_name : %s\n",i,teams[i].team_name);
+            printf("teams[%d].founding_date : %d\n",i,teams[i].founding_date);
+            i++;   
+        }
+        fclose(bin);
+    #endif
+}
+void update_players(FILE *bin, players_t players[], char *str,char *str2)
+{
+
+    char str3[SIZE],str4[SIZE];
+    char *cmd;
+    int num,st,j=0,i=0,k,l,less=1;
+
+    cmd = strtok(str,",");
+    strcpy(str3,cmd);
+    cmd = strtok(NULL,",");
+    strcpy(str4,cmd);
+
+    cmd = strtok(str3,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str3,cmd);  /* takim ismi */
+
+    cmd = strtok(str4,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str4,cmd);  /* player salary */
+
+    cmd = strtok(str2,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str2,cmd);  /* oyuncu ismi */
+     
+    #if defined(DEBUG)   
+        printf("str2 : %s\n",str2);
+        printf("str3 : %s  & str4 : %s\n",str3,str4);
+    #endif
+
+    for(st=fread(&players[i],sizeof(players_t),1,bin);st != 0;
+        st=fread(&players[i],sizeof(players_t),1,bin ) ){
+        if(strcmp(str2,players[i].player_name) == 0){
+            strcpy(players[i].team_name,str3);
+            players[i].salary = atoi(str4);
+            
+        }
+        fseek(bin,sizeof(players_t)*i,SEEK_SET);   
+        fwrite(&players[i],sizeof(players_t),1,bin);
+        i++;
+    }
+    fclose(bin);
+    #if defined(DEBUG)
+        i=0;
+        bin = fopen(PLAYER_FILE,"rb");    
+        for(st = fread(&players[i],sizeof(players_t),1,bin);st!=0;
+             st = fread(&players[i],sizeof(players_t),1,bin) ){
+            printf("players[%d].team_name : %s\n",i,players[i].team_name);
+            printf("players[%d].salary : %d\n",i,players[i].salary);
+            i++;   
+        }
+        fclose(bin);
+    #endif 
+}
+void update_t_statistics(FILE *bin, team_statistics_t team_statistics[], char *str,char *str2)
+{
+    FILE *inp;
+    char str3[SIZE],str4[SIZE],cont[SIZE],name[SIZE];
+    char *strp[SIZE];
+    char *cmd;
+    int num,st,j=-1,i=0,k=0,l,less=1;
+
+    printf("str : %s\nstr2 : %s\n",str,str2);
+
+    cmd = strtok(str2,"&");
+    strcpy(str3,cmd);
+    cmd = strtok(NULL,"&");
+    strcpy(str4,cmd);
+
+    cmd = strtok(str3,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str3,cmd);  /* takim ismi */
+
+    cmd = strtok(str4,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str4,cmd);  /* takim year */ 
+        
+
+    for(st=fread(&team_statistics[i],sizeof(team_statistics_t),1,bin); st !=0;
+        st=fread(&team_statistics[i],sizeof(team_statistics_t),1,bin) ){
+        if(team_statistics[i].year == atoi(str4) && strcmp(team_statistics[i].team_name,str3) == 0){
+            j = i;
+            #if defined(DEBUG)
+                printf("team_statistics[%d].team_name : %s\n",i,team_statistics[i].team_name);
+            #endif
+        }
+        i++;
+    }
+    fclose(bin);
+    #if defined(DEBUG)
+        printf("i : %d\n",i);
+        printf("j : %d\n",j);
+    #endif
+
+    cmd = strtok(str,",");
+    strp[k] = cmd;
+    for(k=1; cmd != NULL;k++){
+        cmd = strtok(NULL,",");
+        if(cmd != NULL)
+            strp[k] = cmd;
+    }
+    k-=1;
+    
+    for(i=0;i<k;i++){
+        cmd = strtok(strp[i],"=");
+        strcpy(cont,cmd);
+        cmd = strtok(NULL,"=");
+        strcpy(name,cmd);
+        num = atoi(cmd);
+        
+        if(strcmp(cont,"team_name") == 0)
+            strcpy(team_statistics[j].team_name,name);
+        if(strcmp(cont,"points") == 0)
+            team_statistics[j].points = num;
+        if(strcmp(cont,"wins") == 0)
+            team_statistics[j].wins = num; 
+        if(strcmp(cont,"loses") == 0)
+            team_statistics[j].loses = num; 
+        if(strcmp(cont,"draws") == 0)
+            team_statistics[j].draws = num; 
+        if(strcmp(cont,"goals_for") == 0)
+            team_statistics[j].goals_for = num;
+        if(strcmp(cont,"goals_against") == 0)
+            team_statistics[j].goals_against = num; 
+        if(strcmp(cont,"goals_difference") == 0)
+            team_statistics[j].goals_difference = num;  
+          
+    }
+    inp = fopen(T_STATISTIC_FILE,"rb+");
+
+    fseek(inp,sizeof(team_statistics_t)*j,SEEK_SET);
+    fwrite(&team_statistics[j],sizeof(team_statistics_t),1,inp);
+    fclose(inp);
+
+    printf("%d -- %s -- %d -- %d -- %d -- %d -- %d -- %d -- %d\n",team_statistics[j].year,team_statistics[j].team_name,team_statistics[j].points,team_statistics[j].wins,team_statistics[j].loses,team_statistics[j].draws,team_statistics[j].goals_for,team_statistics[j].goals_against, team_statistics[j].goals_difference);
+    
+}
+void update_p_statistics(FILE *bin, player_statistics_t player_statistics[], char *str,char *str2)
+{
+    FILE *inp;
+    char str3[SIZE],str4[SIZE],cont[SIZE],name[SIZE];
+    char *strp[SIZE];
+    char *cmd;
+    int num,st,j=-1,i=0,k=0,l,less=1;
+
+    printf("str : %s\nstr2 : %s\n",str,str2);
+
+    cmd = strtok(str2,"&");
+    strcpy(str3,cmd);
+    cmd = strtok(NULL,"&");
+    strcpy(str4,cmd);
+
+    cmd = strtok(str3,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str3,cmd);  /* player ismi */
+
+    cmd = strtok(str4,"=");
+    cmd = strtok(NULL,"=");
+    strcpy(str4,cmd);  /* player year */ 
+           
+    for(st=fread(&player_statistics[i],sizeof(player_statistics_t),1,bin); st !=0;
+        st=fread(&player_statistics[i],sizeof(player_statistics_t),1,bin) ){
+        if(player_statistics[i].year == atoi(str4) && strcmp(player_statistics[i].player_name,str3) == 0){
+            j = i;
+            #if defined(DEBUG)
+                printf("player_statistics[%d].player_name : %s\n",i,player_statistics[i].player_name);
+            #endif
+        }
+        i++;
+    }
+    fclose(bin);
+    #if defined(DEBUG)
+        printf("i : %d\n",i);
+        printf("j : %d\n",j);
+    #endif
+
+    cmd = strtok(str,",");
+    strp[k] = cmd;
+    for(k=1; cmd != NULL;k++){
+        cmd = strtok(NULL,",");
+        if(cmd != NULL)
+            strp[k] = cmd;
+    }
+    k-=1;
+    #if defined(DEBUG)
+        for(i=0;i<k;i++)
+            printf("%s\n",strp[i]);
+    #endif
+    
+    for(i=0;i<k;i++){
+        cmd = strtok(strp[i],"=");
+        strcpy(cont,cmd);
+        cmd = strtok(NULL,"="); 
+        strcpy(name,cmd);
+        num = atoi(cmd);
+   
+        if(strcmp(cont,"year") == 0)
+            player_statistics[j].year = num;
+        if(strcmp(cont,"player_name") == 0)
+            strcpy(player_statistics[j].player_name,name); 
+        if(strcmp(cont,"goals") == 0)
+            player_statistics[j].goals = num; 
+        if(strcmp(cont,"assists") == 0)
+            player_statistics[j].assists = num; 
+        if(strcmp(cont,"red_cards") == 0)
+            player_statistics[j].red_cards = num;
+        if(strcmp(cont,"yellow_cards") == 0)
+            player_statistics[j].yellow_cards = num;   
+          
+    }
+    inp = fopen(P_STATISTIC_FILE,"rb+");
+
+    fseek(inp,sizeof(player_statistics_t)*j,SEEK_SET);
+    fwrite(&player_statistics[j],sizeof(player_statistics_t),1,inp);
+    fclose(inp);
+
+ printf("%d -- %s -- %d -- %d -- %d -- %d \n",player_statistics[j].year,player_statistics[j].player_name,player_statistics[j].goals,player_statistics[j].assists,player_statistics[j].red_cards,player_statistics[j].yellow_cards);
+
+}
+

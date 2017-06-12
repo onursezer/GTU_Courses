@@ -1,0 +1,8 @@
+#surefire
+#Thu Apr 14 03:00:36 EEST 2016
+maven.ext.class.path=C\:\\Program Files\\NetBeans 8.0.2\\java\\maven-nblib\\netbeans-eventspy.jar
+user.dir=C\:\\Users\\Onur Sezer\\Desktop\\121044074
+file.encoding=UTF-8
+localRepository=C\:\\Users\\Onur Sezer\\.m2\\repository
+basedir=C\:\\Users\\Onur Sezer\\Desktop\\121044074
+test=hw6.ArrayListPriorityQueueTest

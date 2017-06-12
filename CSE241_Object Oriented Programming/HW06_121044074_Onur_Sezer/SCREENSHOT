@@ -1,0 +1,664 @@
+livingReversiGame : 1
+livingReversiGame : 2
+livingReversiGame : 3
+livingReversiGame : 4
+livingReversiGame : 5
+
+~~~~~~~~~~~~~~~~~~~   REVERSI GAME  ~~~~~~~~~~~~~~~~~~~ 
+game1, game2(8), game3(10,12), game4(6,4), game5(150,100)
+
+Enter a game number (1-5)
+1
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+1
+--------------------------------------
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  X  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+  YOU : 2   CPU : 2
+
+You
+Enter a move: 
+1b
+
+    a  b  c  d
+ 1  .  O  .  .  
+ 2  .  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+  YOU : 4   CPU : 1
+
+Computer is Playing :
+1a
+
+    a  b  c  d
+ 1  X  O  .  .  
+ 2  .  X  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+  YOU : 3   CPU : 3
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+2
+--------------------------------------
+Enter sizes of board: 
+4 6
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  X  O  .  .  
+ 3  .  .  O  X  .  .  
+ 4  .  .  .  .  .  .  
+
+  YOU : 2   CPU : 2
+
+You
+Enter a move: 
+4d
+
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  X  O  .  .  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 4   CPU : 1
+
+Computer is Playing :
+2e
+
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  X  X  X  .  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 3   CPU : 3
+Do you want exit from the printGame? y/n
+1b
+Enter y / n
+Enter y / n
+n
+
+You
+Enter a move: 
+1b
+
+    a  b  c  d  e  f
+ 1  .  O  .  .  .  .  
+ 2  .  .  O  X  X  .  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 5   CPU : 2
+
+Computer is Playing :
+2b
+
+    a  b  c  d  e  f
+ 1  .  O  .  .  .  .  
+ 2  .  X  X  X  X  .  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 4   CPU : 4
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+1f
+
+    a  b  c  d  e  f
+ 1  .  O  .  .  .  O  
+ 2  .  X  X  X  O  .  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 6   CPU : 3
+
+Computer is Playing :
+2f
+
+    a  b  c  d  e  f
+ 1  .  O  .  .  .  O  
+ 2  .  X  X  X  X  X  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 5   CPU : 5
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+1a
+
+    a  b  c  d  e  f
+ 1  O  O  .  .  .  O  
+ 2  .  O  X  X  X  X  
+ 3  .  .  O  O  .  .  
+ 4  .  .  .  O  .  .  
+
+  YOU : 7   CPU : 4
+
+Computer is Playing :
+4c
+
+    a  b  c  d  e  f
+ 1  O  O  .  .  .  O  
+ 2  .  O  X  X  X  X  
+ 3  .  .  X  X  .  .  
+ 4  .  .  X  O  .  .  
+
+  YOU : 5   CPU : 7
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+4b
+
+    a  b  c  d  e  f
+ 1  O  O  .  .  .  O  
+ 2  .  O  X  X  X  X  
+ 3  .  .  X  X  .  .  
+ 4  .  O  O  O  .  .  
+
+  YOU : 7   CPU : 6
+
+Computer is Playing :
+2a
+
+    a  b  c  d  e  f
+ 1  O  O  .  .  .  O  
+ 2  X  X  X  X  X  X  
+ 3  .  .  X  X  .  .  
+ 4  .  O  O  O  .  .  
+
+  YOU : 6   CPU : 8
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+1c
+
+    a  b  c  d  e  f
+ 1  O  O  O  .  .  O  
+ 2  X  X  O  X  X  X  
+ 3  .  .  O  X  .  .  
+ 4  .  O  O  O  .  .  
+
+  YOU : 9   CPU : 6
+
+Computer is Playing :
+3b
+
+    a  b  c  d  e  f
+ 1  O  O  O  .  .  O  
+ 2  X  X  O  X  X  X  
+ 3  .  X  X  X  .  .  
+ 4  .  O  O  O  .  .  
+
+  YOU : 8   CPU : 8
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+1d
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  .  O  
+ 2  X  X  O  O  X  X  
+ 3  .  X  X  O  .  .  
+ 4  .  O  O  O  .  .  
+
+  YOU : 11   CPU : 6
+
+Computer is Playing :
+1e
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  X  X  X  
+ 3  .  X  X  O  .  .  
+ 4  .  O  O  O  .  .  
+
+  YOU : 10   CPU : 8
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+4a
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  X  X  X  
+ 3  .  O  X  O  .  .  
+ 4  O  O  O  O  .  .  
+
+  YOU : 12   CPU : 7
+
+Computer is Playing :
+3a
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  X  X  X  
+ 3  X  X  X  O  .  .  
+ 4  O  O  O  O  .  .  
+
+  YOU : 11   CPU : 9
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+3f
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  X  O  O  
+ 3  X  X  X  O  .  O  
+ 4  O  O  O  O  .  .  
+
+  YOU : 14   CPU : 7
+
+Computer is Playing :
+3e
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  X  X  O  
+ 3  X  X  X  X  X  O  
+ 4  O  O  O  O  .  .  
+
+  YOU : 12   CPU : 10
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+4e
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  X  X  O  
+ 3  X  X  X  O  X  O  
+ 4  O  O  O  O  O  .  
+
+  YOU : 14   CPU : 9
+
+Computer Passes(no move possible)
+Do you want exit from the printGame? y/n
+n
+
+You
+Enter a move: 
+4f
+
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  O  X  O  
+ 3  X  X  X  O  O  O  
+ 4  O  O  O  O  O  O  
+
+  YOU : 17   CPU : 7
+
+*****   YOU WIN!   *****
+
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+3
+--------------------------------------
+game1, game2, game3, game4, game5
+Enter a number to compare game
+4
+Your game is better than other game.
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+10
+--------------------------------------
+game1, game2, game3, game4, game5
+
+Enter a number to change game (1-5)
+2
+You choiced game2
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+4
+--------------------------------------
+game1, game2, game3, game4, game5
+
+Enter a game number (1-5)
+4
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  .  .  
+ 3  .  X  O  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+5
+--------------------------------------
+Test operator '++' prefix
+
+Start object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  X  O  .  .  .  
+ 5  .  .  .  O  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+
+Returned object
+livingReversiGame : 6
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  .  O  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+livingReversiGame : 5
+
+Changed object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  .  O  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+6
+--------------------------------------
+Test operator '++' postfix
+
+
+Start object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  .  O  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+
+Returned object
+livingReversiGame : 6
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  .  O  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+livingReversiGame : 5
+
+Changed object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  X  X  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+7
+--------------------------------------
+Test for assignment operators
+game1: 
+    a  b  c  d  e  f
+ 1  O  O  O  O  X  O  
+ 2  X  X  O  O  X  O  
+ 3  X  X  X  O  O  O  
+ 4  O  O  O  O  O  O  
+
+game2:
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  X  X  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+
+game1' e game2 atandi.
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  X  X  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+8
+--------------------------------------
+Test for copy constructor
+game1: 
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  X  X  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+livingReversiGame : 6
+
+game6 objesi game1' den olusturuldu.
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  X  .  .  .  
+ 4  .  .  .  X  X  .  .  .  
+ 5  .  .  X  X  X  .  .  .  
+ 6  .  .  .  .  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+--------------------------------------
+livingReversiGame : 5
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+9
+--------------------------------------
+Test call by value:
+
+game4, call by value ile parametre olarak gonderildi.
+livingReversiGame : 6
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  .  .  
+ 3  .  X  O  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+livingReversiGame : 5
+
+Test call by reference:
+game4, call by reference ile parametre olarak gonderildi.
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  .  .  
+ 3  .  X  O  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+--------------------------------------
+
+1- Single step play
+2- playGame
+3- Compare
+4- Test Stream insertion operator
+5- Test operator '++' prefix
+6- Test operator '++' postfix
+7- Test for assignment operators
+8- Test for copy constructor
+9- Test for call by reference and call by value
+10- CHANGE GAME
+11- Exit
+
+Enter a your choice (1-11)
+11
+
+RUN FINISHED; exit value 0; real time: 2m 55s; user: 0ms; system: 10ms

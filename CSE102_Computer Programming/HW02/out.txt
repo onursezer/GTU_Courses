@@ -1,0 +1,11 @@
+weight_analyzer result:
+2
+geo_analyzer result:
+2
+sum_of_2nd_and_3nd result:
+6
+Your age results(Gregorian, Hijri):
+14.74
+15.20
+compute_serie result:
+0.000153

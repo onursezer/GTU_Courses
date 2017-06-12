@@ -1,0 +1,164 @@
+~~~~~~~~~~~~~~~~~~~~~~ Test Complex Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+ComplexNumber + ComplexNumber
+2+3i + 3+3i = 5+6i
+ComplexNumber + RealNumber
+2+3i + 12 = 14+3i
+ComplexNumber + ImaginaryNumber
+2+3i + 2i = 2+5i
+ComplexNumber + RationalNumber
+2+3i + 0.75 = 2.75+3i
+ComplexNumber + IrrationalNumber
+2+3i + 1.41421 = 3.41421+3i
+ComplexNumber + Integer
+2+3i + -1 = 1+3i
+ComplexNumber + NaturalNumber
+2+3i + 5 = 7+3i
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+ComplexNumber - ComplexNumber
+2+3i - 3+3i = -1
+ComplexNumber - RealNumber
+2+3i - 12 = -10+3i
+ComplexNumber - ImaginaryNumber
+2+3i - 2i = 2+1i
+ComplexNumber - RationalNumber
+2+3i - 0.75 = 1.25+3i
+ComplexNumber - IrrationalNumber
+2+3i - 1.41421 = 0.585786+3i
+ComplexNumber - Integer
+2+3i - -1 = 3+3i
+ComplexNumber - NaturalNumber
+2+3i - 5 = -3+3i
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+ComplexNumber < ComplexNumber
+2+3i < 3+3i = true
+ComplexNumber < RealNumber
+2+3i < 12 = true
+ComplexNumber < ImaginaryNumber
+2+3i < 2i = false
+ComplexNumber < RationalNumber
+2+3i < 0.75 = false
+ComplexNumber < IrrationalNumber
+2+3i < 1.41421 = false
+ComplexNumber < Integer
+2+3i < -1 = false
+ComplexNumber < NaturalNumber
+2+3i < 5 = true
+~~~~~~~~~~~~~~~~~~~~~~ Test Real Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+RealNumber + RealNumber
+12 + 1 = 13
+RealNumber + RationalNumber
+12 + 0.75 = 12.75
+RealNumber + IrrationalNumber
+12 + 1.41421 = 13.4142
+RealNumber + Integer
+12 + -1 = 11
+RealNumber + NaturalNumber
+12 + 5 = 17
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+RealNumber - RealNumber
+12 - 1 = 11
+RealNumber - RationalNumber
+12 - 0.75 = 11.25
+RealNumber - IrrationalNumber
+12 - 1.41421 = 10.5858
+RealNumber - Integer
+12 - -1 = 13
+RealNumber - NaturalNumber
+12 - 5 = 7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+RealNumber < RealNumber
+12 < 1 = false
+RealNumber < RationalNumber
+12 < 0.75 = false
+RealNumber < IrrationalNumber
+12 < 1.41421 = false
+RealNumber < Integer
+12 < -1 = false
+RealNumber < NaturalNumber
+12 < 5 = false
+~~~~~~~~~~~~~~~~~~~~~~ Test Imaginary Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+ImaginaryNumber + ImaginaryNumber
+2i + -3i = -1i
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+ImaginaryNumber - ImaginaryNumber
+2i - -3i = 5i
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+ImaginaryNumber < ImaginaryNumber
+2i < -3i = false
+~~~~~~~~~~~~~~~~~~~~~~ Test Rational Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+RationalNumber + RationalNumber
+0.75 + 2.33333 = 3.08333
+RationalNumber + Integer
+0.75 + -1 = -0.25
+RationalNumber + NaturalNumber
+0.75 + 5 = 5.75
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+RationalNumber - RationalNumber
+0.75 - 2.33333 = -1.58333
+RationalNumber - Integer
+0.75 - -1 = 1.75
+RationalNumber - NaturalNumber
+0.75 - 5 = -4.25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+RationalNumber < RationalNumber
+0.75 < 2.33333 = true
+RationalNumber < Integer
+0.75 < -1 = false
+RationalNumber < NaturalNumber
+0.75 < 5 = true
+~~~~~~~~~~~~~~~~~~~~~~ Test Irrational Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+IrrationalNumber + IrrationalNumber
+1.41421 + 2.23607 = 3.65028
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+IrrationalNumber - IrrationalNumber
+1.41421 - 2.23607 = -0.821854
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+IrrationalNumber < IrrationalNumber
+1.41421 < 2.23607 = false
+~~~~~~~~~~~~~~~~~~~~~~ Test Integer Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+Integer + Integer
+-1 + 7 = 6
+Integer + NaturalNumber
+-1 + 5 = 4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+Integer - Integer
+-1 - 7 = -8
+Integer - NaturalNumber
+-1 - 5 = -6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+Integer < Integer
+-1 < 7 = true
+Integer < NaturalNumber
+-1 < 5 = true
+~~~~~~~~~~~~~~~~~~~~~~ Test Natural Number ~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '+'
+NaturalNumber + NaturalNumber
+5 + 2 = 7
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '-'
+NaturalNumber - NaturalNumber
+5 - 2 = 3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+       Test Operator '<'
+NaturalNumber < NaturalNumber
+5 < 2 = false
+
+RUN FINISHED; exit value 0; real time: 0ms; user: 0ms; system: 0ms

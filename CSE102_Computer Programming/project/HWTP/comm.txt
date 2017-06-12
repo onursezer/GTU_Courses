@@ -1,0 +1,2 @@
+select team_name from teams
+select player_name from players

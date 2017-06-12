@@ -1,0 +1,155 @@
+***********  TEAMS  **********
+insert ankaraspor,ankara,19_mayis,2005,mor-sari to teams
+insert galatasaray,istanbul,tt_arena,1905,sari-kirmizi to teams
+insert fenerbahce,istanbul,sukru_sarac_oglu,1907,sari-lacivert to teams
+insert besiktas,istanbul,inonü,1903,siyah-beyaz to teams
+insert trabzonspor,trabzon,avni_aker,1967,bordo-mavi to teams
+insert bursaspor,bursa,bursa_ataturk,1963,yesil-beyaz to teams
+insert salvarspor,kastamonu,bursa_ataturk,1993,yesil-kirmizi to teams
+insert kastomuspor,kastamonu,bursa_ataturk,1973,pembe-beyaz to teams
+insert afyonspor,afyon,kara_hisar,1953,mor-beyaz to teams
+
+***********  PLAYERS **********
+insert burak_yilmaz,galatasaray,1985,turkey,hucum,1000 to players
+insert selcuk_inan,galatasaray,1985,turkey,orta_saha,1500 to players
+insert emre_colak,galatasaray,1995,turkey,orta_saha,500 to players
+insert semih_kaya,galatasaray,1985,turkey,defans,1200 to players
+insert bekir_irtegun,fenerbahce,1984,turkey,defans,900 to players
+insert emre_belezoglu,fenerbahce,1975,turkey,orta_saha,1300 to players
+insert hasan_ali,fenerbahce,1987,turkey,defans,700 to players
+insert gokhan_tore,besiktas,1989,turkey,orta_saha,950 to players
+insert drogba,galatasaray,1970,fil_disi,hucum,2950 to players
+
+************ TEAM STATİSTİCS *****************
+insert 2014,galatasaray,81,22,0,3,100,20,80 to team_statistics
+insert 2014,fenerbahce,79,20,1,6,97,30,67 to team_statistics
+insert 2014,besiktas,77,19,2,7,92,40,52 to team_statistics
+insert 2014,trabzonspor,75,19,4,7,90,50,40 to team_statistics
+insert 2014,bursaspor,71,19,5,7,87,56,21 to team_statistics
+insert 2014,ankaraspor,67,19,6,7,89,70,19 to team_statistics
+insert 2013,galatasaray,81,22,7,3,110,20,90 to team_statistics
+insert 2013,fenerbahce,77,20,3,8,77,30,47 to team_statistics
+
+************ PLAYER STATİSTİCS *****************
+insert 2014,burak_yilmaz,34,12,2,5 to player_statistics
+insert 2014,selcuk_inan,12,18,3,8 to player_statistics
+insert 2014,emre_colak,8,18,1,4 to player_statistics
+insert 2014,hakan_balta,2,3,2,5 to player_statistics
+insert 2013,hakan_balta,1,9,3,7 to player_statistics
+insert 2014,sabri_sarioglu,12,13,12,15 to player_statistics
+insert 2013,semih_kaya,3,4,1,9 to player_statistics
+insert 2013,drogba,23,24,2,8 to player_statistics
+
+****************  DELETE **************
+delete * from players where position=orta_saha
+delete * from teams where city=bursa
+delete * from team_statistics where point=81
+delete * from team_statistics where year=2013
+delete * from player_statistics where assists=3
+
+**************** UPDATE **************
+update team_name=afyonspor in teams where team_name=galatasaray
+
+update team_name=besiktas,salary=2700 in players where player_name=burak_yilmaz
+update team_name=galatasaray,salary=1750 in players where player_name=hasan_ali
+
+update points=30 in team_statistics where team_name=galatasaray&year=2014
+update points=70,wins=22,loses=3,draws=1 in team_statistics where team_name=besiktas 
+update points=121,wins=33,loses=0,draws=1 in team_statistics where team_name=galatasaray  
+update points=31,wins=3,loses=22,draws=1 in team_statistics where team_name=fenerbahce
+
+update goals=55,assists=23 in player_statistics where player_name=selcuk_inan
+update player_name=selcuk_inan in player_statistics where player_name=leyla_mecnun
+update assists=23,red_cards=12 in player_statistics where player_name=selcuk_inan
+update player_name=hakan_balta in player_statistics where player_name=wesley_snijder
+update player_name=selcuk_sahin in player_statistics where player_name=selcuk_inan
+update year=2014,assists=9 in player_statistics where player_name=selcuk_inan
+update player_name=wesley_snijder in player_statistics where player_name=hakan_balta
+update assists=19,red_cards=2,goals=19 in player_statistics where player_name=wesley_snijder
+
+*************** SELECT ******************       
+select team_name from teams
+select city,team_name,stadium,founding_date,colors from teams
+select stadium from teams
+select founding_date teams 
+select colors from teams
+
+select player_name,salary,birth_date,position from players
+select team_name from players
+select birth_date from players
+select origin from players
+select position from players
+select salary from players
+
+select red_cards,yellow_cards,year,player_name from player_statistics
+
+select loses,team_name,year,goals_against from team_statistics
+
+***********SORT***********
+select team_name,city from teams sort by founding_date asc
+select team_name,city from teams sort by founding_date asc
+select team_name,colors,stadium,city from teams sort by founding_date desc
+select team_name,colors,stadium,city from teams sort by founding_date asc
+
+
+select player_name from players sort by salary asc
+select player_name from players sort by birth_date desc
+select team_name,player_name,origin,position from players sort by salary desc
+select team_name,player_name,origin,position from players sort by birth_date desc
+
+
+select team_name from team_statistics sort by year desc
+select team_name from team_statistics sort by points desc
+select team_name from team_statistics sort by points asc
+select team_name from team_statistics sort by draws desc
+select team_name from team_statistics sort by goals_for desc
+select team_name from team_statistics sort by goals_for asc
+select team_name from team_statistics sort by goals_against asc
+select team_name from team_statistics sort by goals_against desc
+select team_name from team_statistics sort by goals_difference desc
+
+
+select player_name from player_statistics sort by year desc
+select player_name from player_statistics sort by goals desc
+select player_name from player_statistics sort by goals asc
+select player_name from player_statistics sort by yellow_cards asc
+select player_name from player_statistics sort by assists desc
+select player_name from player_statistics sort by red_cards desc
+
+*****************where*****************
+select colors,stadium from teams where team_name=fenerbahce
+select colors,founding_date,team_name from teams where stadium=tt_arena
+select colors,founding_date,team_name from teams where founding_date=1907
+select colors,founding_date,team_name from teams where city=bursa
+select colors,founding_date,team_name from teams where colors=siyah-beyaz
+
+select birth_date,origin from players where player_name=burak_yilmaz
+select birth_date,origin,salary,position,team_name from players where player_name=selcuk_inan
+select birth_date,origin,salary,position,team_name from players where player_name=drogba
+select birth_date,origin,salary,position,team_name from players where player_name=drogba
+select birth_date,origin from players where team_name=galatasaray
+select player_name,birth_date,origin,salary,position,team_name from players where birth_date=1975
+select player_name,birth_date,origin from players where position=defans
+select player_name,birth_date,origin from players where salary=950
+
+
+select team_name,points,wins,loses from team_statistics where year=2014
+select team_name,points,wins,loses,draws,goals_for from team_statistics where team_name=besiktas
+select team_name,points,wins,loses,draws,goals_for from team_statistics where points=71
+select team_name,points,wins,loses,draws,goals_for from team_statistics where goals_for=89
+select team_name,points,wins,loses,draws,goals_for from team_statistics where goals_against=50
+select team_name,points,wins,loses,draws,goals_for from team_statistics where goals_difference=52
+
+
+select player_name,goals,year,assists,red_cards from player_statistics where year=2013
+select player_name,goals,year,assists from player_statistics where player_name=selcuk_inan
+select player_name,goals,year,assists from player_statistics where player_name=wesley_snijder
+select player_name,goals,year,assists,red_cards from player_statistics where goals=55
+select player_name,goals,year,assists,red_cards from player_statistics where assists=4
+select player_name,goals,year,assists,red_cards from player_statistics where red_cards=3
+select player_name,goals,year,assists,red_cards from player_statistics where yellow_cards=8
+
+
+
+
+

@@ -1,0 +1,6 @@
+insert 2014,galatasaray,81,22,3,3,100,20,80 to team_statistics
+insert 2014,fenerbahce,79,20,3,6,100,30,70 to team_statistics
+insert 2014,besiktas,77,19,3,7,100,40,60 to team_statistics
+insert 2014,trabzonspor,75,19,3,7,100,50,50 to team_statistics
+q
+  

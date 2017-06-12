@@ -1,0 +1,66 @@
+***********  TEAMS  **********
+insert ankaraspor,ankara,19_mayis,2005,mor-sari to teams
+insert galatasaray,istanbul,tt_arena,1905,sari-kirmizi to teams
+insert fenerbahce,istanbul,sukru_sarac_oglu,1903,sari-lacivert to teams
+insert besiktas,istanbul,inonü,1903,siyah_beyaz to teams
+insert trabzonspor,trabzon,avni_aker,1967,bordo-mavi to teams
+insert bursaspor,bursa,bursa_ataturk,1963,yesil-beyaz to teams
+insert salvarspor,kastamonu,bursa_ataturk,1963,yesil-beyaz to teams
+insert kastomuspor,kastamonu,bursa_ataturk,1963,yesil-beyaz to teams
+insert gfyonspor,kastamonu,bursa_ataturk,1963,yesil-beyaz to teams
+
+***********  PLAYERS **********
+insert burak_yilmaz,galatasaray,1985,turkey,hucum,1000 to players
+insert selcuk_inan,galatasaray,1985,turkey,orta_saha,1500 to players
+insert emre_colak,galatasaray,1995,turkey,orta_saha,500 to players
+insert semih_kaya,galatasaray,1985,turkey,defans,1200 to players
+insert bekir_irtegun,fenerbahce,1984,turkey,defans,900 to players
+insert emre_belezoglu,fenerbahce,1975,turkey,orta_saha,1300 to players
+insert hasan_ali,fenerbahce,1987,turkey,defans,700 to players
+insert gokhan_tore,besiktas,1989,turkey,orta_saha,950 to players
+insert drogba,galatasaray,1970,fil_disi,hucum,2950 to players
+
+************ TEAM STATİSTİCS *****************
+insert 2014,galatasaray,81,22,3,3,100,20,80 to team_statistics
+insert 2014,fenerbahce,79,20,3,6,100,30,70 to team_statistics
+insert 2014,besiktas,77,19,3,7,100,40,60 to team_statistics
+insert 2014,trabzonspor,75,19,3,7,100,50,50 to team_statistics
+insert 2014,bursaspor,71,19,3,7,100,56,44 to team_statistics
+insert 2014,ankaraspor,67,19,3,7,100,70,30 to team_statistics
+insert 2013,galatasaray,81,22,3,3,100,20,80 to team_statistics
+insert 2013,fenerbahce,77,20,3,6,100,30,70 to team_statistics
+
+************ PLAYER STATİSTİCS *****************
+insert 2014,burak_yilmaz,34,12,2,5 to player_statistics
+insert 2014,selcuk_inan,12,18,3,8 to player_statistics
+insert 2014,emre_colak,8,18,1,4 to player_statistics
+insert 2014,hakan_balta,2,3,2,5 to player_statistics
+
+****************  DELETE **************
+delete * from players where position=orta_saha
+delete * from teams where city=bursa
+delete * from team_statistics where point=81
+delete * from team_statistics where year=2013
+delete * from player_statistics where assists=3
+
+**************** UPDATE **************
+update team_name=afyonspor,founding_date=2013,city=afyon,colors=mor-beyaz,stadium=afyon_kalesi in teams where team_name=afyonspor
+
+update team_name=galatasaray,salary=2000 in players where player_name=burak_yilmaz
+update team_name=galatasaray,salary=1750 in players where player_name=hasan_ali
+
+update points=30 in team_statistics where team_name=galatasaray&year=2014
+update points=70,wins=22,loses=3,draws=1 in team_statistics where team_name=besiktas&year=2014  
+update points=121,wins=33,loses=0,draws=1 in team_statistics where team_name=galatasaray&year=2014  
+update points=31,wins=3,loses=22,draws=1 in team_statistics where team_name=fenerbahce&year=2014
+
+update goals=55,assists=23 in player_statistics where player_name=selcuk_inan&year=2014  
+update player_name=leyla_mecnun,assists=23,red_cards=0 in player_statistics where player_name=selcuk_inan&year=2014
+update player_name=hakan_balta,goals=3,assists=4 in player_statistics where player_name=wesley_snijder&year=2014
+update player_name=selcuk_sahin,year=2014,assists=9 in player_statistics where player_name=selcuk_inan&year=2014    
+
+
+
+
+
+

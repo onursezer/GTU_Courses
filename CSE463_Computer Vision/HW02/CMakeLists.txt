@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 2.8)
+project( Onur_SEZER_121044074 )
+find_package( OpenCV REQUIRED )
+add_executable( Onur_SEZER_121044074 Onur_SEZER_121044074.cpp )
+target_link_libraries( Onur_SEZER_121044074 ${OpenCV_LIBS} )

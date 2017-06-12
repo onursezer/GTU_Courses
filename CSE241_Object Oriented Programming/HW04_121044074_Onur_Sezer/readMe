@@ -1,0 +1,13 @@
+Oyununda 5 tane obje olusturulur bunlarin 
+3' u filedan okur ve 2D gameCell vectorunu doldurur, file isimleri
+objeye constracter ile alinir.Diger iki oyunda tek parametre ve iki parametre alan constracter yardimi ile 2D gameCell vectoru doldurulur.
+* singleStepPlay() fonksiyonu computer ve user tek hamle yapar.
+* playGame() fonksiyonu kullanicidan size alir ve oyun bitene kadar devam eder.Kulanici isterse oyunun bitmesini beklemeden cikabilir.
+* compareReversiGames() iki tane Reversi objesini kiyaslar, cagrildigi objenin 'O' tasi fazla ise true dondurur.
+static olarak tanimlanan numberOfAlive degiskeni  toplam yasayan 'X' ve 'O' sayini tutar.
+Objeler:
+game5 : Dosyadan okuma yapmaz 2 parametre alan constractir ile olusur.
+game4 : Dosyadan okuma yapmaz 1 parametre alan constractir ile olusur.
+game3 : game3.txt sinden okuma yapar.
+game2 : game2.txt sinden okuma yapar.
+game1 : game1.txt sinden okuma yapar.

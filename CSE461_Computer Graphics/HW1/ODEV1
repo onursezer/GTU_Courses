@@ -1,0 +1,14 @@
+ÖDEV 1 - DDA vs Bresenham Comparison
+- Write a program that compares Bresenham and DDA algorithms. 
+
+You may want to draw many many lines in a loop in order to be able to compare.
+
+Submit your code, executable and output in a single zip file.
+
+make sure that you have included all files to run.
+
+PROGRAM DOCUMENTATION IS IMPORTANT. PUT COMMENTS TO YOUR CODE...
+
+
+
+you may want to repeat many thousand different lines to get an accurate comparison. (10000 lines from different places of screen)

@@ -1,0 +1,230 @@
+~~~~~~~~ Test Directory ~~~~~~~~~~~~~
+**** Test cp & path  Fuctions **** 
+/home
+/home/user
+/home/user/lessons
+/home/user/lessons/math
+/home/user/lessons/chemistry
+/home/user/lessons/physics
+/home/user/lessons/math/addition
+/home/user/lessons/math/subtraction
+/home/user/lessons/chemistry/atom
+/home/user/lessons/chemistry/na
+/home/user/lessons/chemistry/hidrojen
+/home/user/lessons/chemistry/oksijen
+/home/user/lessons/physics/kinetic
+/home/user/lessons/physics/jeo
+/home/exe
+/home/exe2
+/home/user/exe3
+/home/user/lessons/exe4
+/home/user/lessons/exe5
+/home/user/lessons/math/exe6
+/home/user/lessons/physics/exe7
+
+**** Test ls  Fuction ****
+
+~~~~~~~ Test '-l' ~~~~~~~ 
+drwxr-xr-x user onur 4123 7.12.2015
+-rwxrwxr-x exe onur 39 11.12.2015
+-rwxrwxr-x exe2 onur 34 9.12.2014
+
+~~~~~~~ Test '-a' ~~~~~~~ 
+. .. user exe exe2 
+
+~~~~~~~ Test '-R' ~~~~~~~ 
+
+./home:
+user
+exe
+exe2
+
+./home/user:
+lessons
+exe3
+
+./home/user/lessons:
+math
+physics
+chemistry
+exe4
+exe5
+
+./home/user/lessons/math:
+addition
+subtraction
+exe6
+
+./home/user/lessons/physics:
+kinetic
+jeo
+exe7
+
+./home/user/lessons/chemistry:
+atom
+hidrojen
+na
+oksijen
+
+~~~~~~~ Test '-al' ~~~~~~~ 
+drwxr-xr-x onur onur 4096 19.12.2015 .
+drwxr-xr-x onur onur 4096 20.12.2015 ..
+drwxr-xr-x user onur 4123 7.12.2015
+-rwxrwxr-x exe onur 39 11.12.2015
+-rwxrwxr-x exe2 onur 34 9.12.2014
+
+~~~~~~~ Test '-aR' ~~~~~~~ 
+
+./home:
+. .. user exe exe2 
+
+./home/user:
+. .. lessons exe3 
+
+./home/user/lessons:
+. .. math physics chemistry exe4 exe5 
+
+./home/user/lessons/math:
+. .. addition subtraction exe6 
+
+./home/user/lessons/physics:
+. .. kinetic jeo exe7 
+
+./home/user/lessons/chemistry:
+. .. atom hidrojen na oksijen 
+
+~~~~~~~ Test '-Rl' ~~~~~~~ 
+
+./home:
+drwxr-xr-x user onur 4123 7.12.2015
+-rwxrwxr-x exe onur 39 11.12.2015
+-rwxrwxr-x exe2 onur 34 9.12.2014
+
+./home/user:
+drwxr-xr-x lessons onur 1547 12.8.2015
+-rwxrwxr-x exe3 onur 37 12.12.2015
+
+./home/user/lessons:
+drwxr-xr-x math onur 953 3.7.2015
+drwxr-xr-x physics onur 221 2.12.2015
+drwxr-xr-x chemistry onur 135 2.2.2015
+-rwxrwxr-x exe4 onur 46 28.10.2015
+-rwxrwxr-x exe5 onur 54 18.12.2015
+
+./home/user/lessons/math:
+-rw-rw-r--addition onur 23 21.3.2015
+-rw-rw-r--subtraction onur 31 12.3.2015
+-rwxrwxr-x exe6 onur 55 18.10.2015
+
+./home/user/lessons/physics:
+-rw-rw-r--kinetic onur 26 9.11.2015
+-rw-rw-r--jeo onur 78 12.12.2015
+-rwxrwxr-x exe7 onur 67 18.11.2015
+
+./home/user/lessons/chemistry:
+-rw-rw-r--atom onur 19 9.6.2015
+-rw-rw-r--hidrojen onur 34 1.12.2015
+-rw-rw-r--na onur 22 8.12.2015
+-rw-rw-r--oksijen onur 56 2.12.2015
+
+**** Test cd  Fuction ****
+
+Before cd
+home
+After cd
+user
+
+Before cd
+user
+After cd
+lessons
+
+Before cd
+lessons
+After cd
+math
+
+Before cd
+math
+After cd
+CD can not.
+math
+
+Before cd
+math
+After cd
+Not a directory !
+math
+
+Before cd
+user
+After cd
+lessons
+
+Before cd
+math
+After cd
+lessons
+-----------------------------------------------
+
+~~~~~~~~ Test Executable ~~~~~~~~~~~~~
+**** Test cp & path  Fuctions **** 
+/home/exe
+
+**** Test ls  Fuction ****
+
+~~~~~~~ Test '-l' ~~~~~~~ 
+-rwxrwxr-x exe onur 39 11.12.2015
+
+~~~~~~~ Test '-a' ~~~~~~~ 
+exe
+
+~~~~~~~ Test '-R' ~~~~~~~ 
+exe
+
+~~~~~~~ Test '-aR' ~~~~~~~ 
+exe
+
+~~~~~~~ Test '-al' ~~~~~~~ 
+-rwxrwxr-x exe onur 39 11.12.2015
+
+~~~~~~~ Test '-Rl' ~~~~~~~ 
+-rwxrwxr-x exe onur 39 11.12.2015
+
+******** Test cd  Fuction ********
+Not a directory!
+Not a directory!
+Not a directory!
+-----------------------------------------------
+
+~~~~~~~~ Test TextFile ~~~~~~~~~~~~~
+**** Test cp & path  Fuctions **** 
+/home/exe
+
+**** Test ls  Fuction ****
+
+~~~~~~~ Test '-l' ~~~~~~~ 
+-rw-rw-r-- atom onur 19 9.6.2015
+
+~~~~~~~ Test '-a' ~~~~~~~ 
+atom
+
+~~~~~~~ Test '-R' ~~~~~~~ 
+atom
+
+~~~~~~~ Test '-aR' ~~~~~~~ 
+atom
+
+~~~~~~~ Test '-al' ~~~~~~~ 
+-rw-rw-r-- atom onur 19 9.6.2015
+
+~~~~~~~ Test '-Rl' ~~~~~~~ 
+-rw-rw-r-- atom onur 19 9.6.2015
+
+**** Test cd  Fuction ****
+Not a directory !
+Not a directory !
+Not a directory !
+-----------------------------------------------
+
+RUN FINISHED; exit value 0; real time: 0ms; user: 0ms; system: 0ms

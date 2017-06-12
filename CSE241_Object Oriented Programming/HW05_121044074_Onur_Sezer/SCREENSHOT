@@ -1,0 +1,1243 @@
+~~~~~~~~~~~~~~ TEST CELL ~~~~~~~~~~~~~~
+Test '<' 
+   4 < 4 is false.
+
+Test '>' 
+   4 > 4 is false.
+
+Test '<=' 
+   4 <= 4 is true.
+
+Test '>=' 
+   4 >= 4 is true.
+
+Test '==' 
+   4a == 4b is false.
+
+Test '!=' 
+   4a != 4b is true.
+
+Test '++' prefix
+   Start: 4a,X
+   Returned objecet: 5b,X
+   Changed object: 5b,X
+
+Test '++' postfix
+   Start: 5b,X
+   Returned objecet: 5b,X
+   Changed object: 6c,X
+
+Test '--' prefix
+   Start: 6c,X
+   Returned objecet: 5b,X
+   Changed object: 5b,X
+
+Test '--' postfix
+   Start: 5b,X
+   Returned objecet: 5b,X
+   Changed object: 4a,X
+
+Test  '<<' 
+4a,X
+
+Test  '>>' 
+You should enter like 5a,X 
+6b,O
+getCorY() : 6
+getCorX() : b
+getCh() : O
+~~~~~~~~~~~~~~ END OF TEST CELL ~~~~~~~~~~~~~~
+
+
+~~~~~~~~~~~~~~ TEST Reversi ~~~~~~~~~~~~~~
+game1.txt added to game1
+game2.txt added to game2
+game3.txt added to game3
+No read from file game4
+No read from file game5
+
+Enter a game number (1-5)
+1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+1
+Test operator '++' prefix
+
+Start object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  X  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+2
+Test operator '++' postfix
+
+
+Start object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  X  X  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+3
+Test operator '--' prefix
+
+Start object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  X  X  X  .  
+ 4  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+4
+Test operator '--' postfix
+
+
+Start object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  X  .  
+ 2  .  X  X  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  X  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  X  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+2a
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+3d
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  O  O  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+3
+Test operator '--' prefix
+
+Start object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  O  O  
+ 4  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+4
+Test operator '--' postfix
+
+
+Start object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  O  O  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  X  O  .  
+ 3  .  O  X  .  
+ 4  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+6
+Test operator '[]' 
+Test for '4c' 
+4 c
+Test for '12b' 
+-1000 -1000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+7
+Test operator '()' 
+Test for '2a' 
+2 a
+Test for '9c' 
+-1000 -1000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+8
+game1, game2, game3, game4, game5
+
+Enter a number to change game (1-5)
+2
+You choised game2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 20
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+1
+Test operator '++' prefix
+
+Start object
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  
+ 5  .  .  X  O  .  .  
+ 6  .  .  O  X  .  .  
+ 7  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  
+ 4  .  .  .  X  .  .  
+ 5  .  .  X  X  .  .  
+ 6  .  .  O  X  .  .  
+ 7  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  
+ 4  .  .  .  X  .  .  
+ 5  .  .  X  X  .  .  
+ 6  .  .  O  X  .  .  
+ 7  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 21
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  
+ 4  .  .  .  X  .  .  
+ 5  .  .  X  X  .  .  
+ 6  .  .  O  X  .  .  
+ 7  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+4e
+    a  b  c  d  e  f
+ 1  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  
+ 4  .  .  .  X  O  .  
+ 5  .  .  X  O  .  .  
+ 6  .  .  O  X  .  .  
+ 7  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+8
+game1, game2, game3, game4, game5
+
+Enter a number to change game (1-5)
+3
+You choised game3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+2
+Test operator '++' postfix
+
+
+Start object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  
+ 5  .  .  X  O  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  
+ 5  .  .  X  O  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  X  .  .  .  .  
+ 5  .  .  X  X  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+4
+Test operator '--' postfix
+
+
+Start object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  X  .  .  .  .  
+ 5  .  .  X  X  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  X  .  .  .  .  
+ 5  .  .  X  X  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  
+ 5  .  .  X  O  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 22
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  
+ 5  .  .  X  O  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+5b
+    a  b  c  d  e  f  g  h
+ 1  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  
+ 5  .  O  O  O  .  .  .  .  
+ 6  .  .  O  X  .  .  .  .  
+ 7  .  .  .  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+6
+Test operator '[]' 
+Test for '4c' 
+4 c
+Test for '12b' 
+-1000 -1000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+7
+Test operator '()' 
+Test for '2a' 
+2 a
+Test for '9c' 
+9 c
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+8
+game1, game2, game3, game4, game5
+
+Enter a number to change game (1-5)
+4
+You choised game4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+2
+Test operator '++' postfix
+
+
+Start object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  .  .  .  .  .  .  
+ 6  .  .  .  .  .  X  O  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  .  .  .  .  .  .  
+ 6  .  .  .  .  .  X  O  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+1
+Test operator '++' prefix
+
+Start object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  X  X  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  X  X  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  X  X  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+6
+e
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  X  X  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+3
+Test operator '--' prefix
+
+Start object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  X  X  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+4
+Test operator '--' postfix
+
+
+Start object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Returned object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  X  .  .  .  .  .  
+ 6  .  .  .  .  .  X  X  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+
+Changed object
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  .  .  .  .  .  .  
+ 6  .  .  .  .  .  X  O  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 23
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  .  .  .  .  .  .  
+ 6  .  .  .  .  .  X  O  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+6e
+    a  b  c  d  e  f  g  h  i  j  k  l
+ 1  .  .  .  .  .  .  .  .  .  .  .  .  
+ 2  .  .  .  .  .  .  .  .  .  .  .  .  
+ 3  .  .  .  .  .  .  .  .  .  .  .  .  
+ 4  .  .  .  .  .  .  .  .  .  .  .  .  
+ 5  .  .  .  .  .  .  .  .  .  .  .  .  
+ 6  .  .  .  .  O  O  O  .  .  .  .  .  
+ 7  .  .  .  .  .  O  X  .  .  .  .  .  
+ 8  .  .  .  .  .  .  .  .  .  .  .  .  
+ 9  .  .  .  .  .  .  .  .  .  .  .  .  
+10  .  .  .  .  .  .  .  .  .  .  .  .  
+11  .  .  .  .  .  .  .  .  .  .  .  .  
+12  .  .  .  .  .  .  .  .  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+7
+Test operator '()' 
+Test for '2a' 
+2 a
+Test for '9c' 
+9 c
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+8
+game1, game2, game3, game4, game5
+
+Enter a number to change game (1-5)
+5
+You choised game5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 24
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+1
+Test operator '++' prefix
+
+Start object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  .  .  
+ 3  .  X  O  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+
+Returned object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  X  .  
+ 3  .  X  X  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+
+Changed object
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  X  .  
+ 3  .  X  X  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 25
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+5
+Test operator '+='
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  X  .  
+ 3  .  X  X  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+Enter a command (like 3a,4ab, etc.)
+2d
+    a  b  c  d
+ 1  .  .  .  .  
+ 2  .  .  X  O  
+ 3  .  X  O  .  
+ 4  .  O  X  .  
+ 5  .  .  .  .  
+ 6  .  .  .  .  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+6
+Test operator '[]' 
+Test for '4c' 
+4 c
+Test for '12b' 
+-1000 -1000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+7
+Test operator '()' 
+Test for '2a' 
+2 a
+Test for '9c' 
+-1000 -1000
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Number of Live Cell : 26
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1- Test operator '++' prefix
+2- Test operator '++' postfix
+3- Test operator '--' for prefix
+4- Test operator '--' for postfix
+5- Test operator '+=' 
+6- Test operator '[]' 
+7- Test operator '()' 
+8- CHANGE game
+9- Exit
+
+Enter a your choice (1-9)
+9
+game1 was written to last_game1.txt
+game2 was written to last_game2.txt
+game3 was written to last_game3.txt
+game4 was written to last_game4.txt
+game5 was written to last_game5.txt
+
+RUN FINISHED; exit value 0; real time: 4m 59s; user: 0ms; system: 0ms
