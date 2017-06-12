@@ -1,0 +1,140 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do PROJE01_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/full_adder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/adder.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/subtractor.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module subtractor
+# 
+# Top level modules:
+# 	subtractor
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/andop.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module andop
+# 
+# Top level modules:
+# 	andop
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/xorop.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module xorop
+# 
+# Top level modules:
+# 	xorop
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_base.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux_base
+# 
+# Top level modules:
+# 	mux_base
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_full.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux_full
+# 
+# Top level modules:
+# 	mux_full
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main_demos.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module main_demos
+# 
+# Top level modules:
+# 	main_demos
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module main
+# 
+# Top level modules:
+# 	main
+# 
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/adder.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/andop.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module andop
+# 
+# Top level modules:
+# 	andop
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/full_adder.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module full_adder
+# 
+# Top level modules:
+# 	full_adder
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module main
+# 
+# Top level modules:
+# 	main
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main_demos.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module main_demos
+# 
+# Top level modules:
+# 	main_demos
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_base.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux_base
+# 
+# Top level modules:
+# 	mux_base
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_full.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module mux_full
+# 
+# Top level modules:
+# 	mux_full
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/subtractor.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module subtractor
+# 
+# Top level modules:
+# 	subtractor
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/test_main.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test_main
+# 
+# Top level modules:
+# 	test_main
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/xorop.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module xorop
+# 
+# Top level modules:
+# 	xorop
+vsim -voptargs=+acc work.test_main
+# vsim -voptargs=+acc work.test_main 
+# Loading work.test_main
+# Loading work.main
+# Loading work.adder
+# Loading work.full_adder
+# Loading work.subtractor
+# Loading work.andop
+# Loading work.xorop
+# Loading work.mux_full
+# Loading work.mux_base
+run
+# a=1100 b=1101 res=0001

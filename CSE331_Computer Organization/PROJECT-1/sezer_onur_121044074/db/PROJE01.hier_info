@@ -1,0 +1,307 @@
+|main_demos
+led[0] <= main:testme.port0
+led[1] <= main:testme.port0
+led[2] <= main:testme.port0
+led[3] <= main:testme.port0
+led[4] <= main:testme.port0
+led[5] <= main:testme.port0
+led[6] <= main:testme.port0
+led[7] <= main:testme.port0
+led[8] <= main:testme.port0
+led[9] <= main:testme.port0
+sw[0] => sw[0].IN1
+sw[1] => sw[1].IN1
+sw[2] => sw[2].IN1
+sw[3] => sw[3].IN1
+sw[4] => sw[4].IN1
+sw[5] => sw[5].IN1
+sw[6] => sw[6].IN1
+sw[7] => sw[7].IN1
+sw[8] => sw[8].IN1
+sw[9] => sw[9].IN1
+
+
+|main_demos|main:testme
+led[0] <= mux_full:o5.port0
+led[1] <= mux_full:o5.port0
+led[2] <= mux_full:o5.port0
+led[3] <= mux_full:o5.port0
+led[4] <= <GND>
+led[5] <= <GND>
+led[6] <= <GND>
+led[7] <= <GND>
+led[8] <= <GND>
+led[9] <= <GND>
+sw[0] => sw[0].IN4
+sw[1] => sw[1].IN4
+sw[2] => sw[2].IN4
+sw[3] => sw[3].IN4
+sw[4] => sw[4].IN4
+sw[5] => sw[5].IN4
+sw[6] => sw[6].IN4
+sw[7] => sw[7].IN4
+sw[8] => sw[8].IN1
+sw[9] => sw[9].IN1
+
+
+|main_demos|main:testme|adder:o1
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => b[0].IN1
+b[1] => b[1].IN1
+b[2] => b[2].IN1
+b[3] => b[3].IN1
+sum[0] <= full_adder:u0.port3
+sum[1] <= full_adder:u1.port3
+sum[2] <= full_adder:u2.port3
+sum[3] <= full_adder:u3.port3
+
+
+|main_demos|main:testme|adder:o1|full_adder:u0
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|adder:o1|full_adder:u1
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|adder:o1|full_adder:u2
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|adder:o1|full_adder:u3
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|subtractor:o2
+a[0] => a[0].IN1
+a[1] => a[1].IN1
+a[2] => a[2].IN1
+a[3] => a[3].IN1
+b[0] => l[0].IN1
+b[1] => l[1].IN1
+b[2] => l[2].IN1
+b[3] => l[3].IN1
+diff[0] <= full_adder:u0.port3
+diff[1] <= full_adder:u1.port3
+diff[2] <= full_adder:u2.port3
+diff[3] <= full_adder:u3.port3
+
+
+|main_demos|main:testme|subtractor:o2|full_adder:u0
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|subtractor:o2|full_adder:u1
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|subtractor:o2|full_adder:u2
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|subtractor:o2|full_adder:u3
+a => o1.IN0
+a => o2.IN0
+a => o4.IN0
+b => o1.IN1
+b => o2.IN1
+b => o3.IN0
+c => o1.IN2
+c => o3.IN1
+c => o4.IN1
+sum <= o1.DB_MAX_OUTPUT_PORT_TYPE
+carry <= o5.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|andop:o3
+a[0] => comb.IN0
+a[1] => comb.IN0
+a[2] => comb.IN0
+a[3] => comb.IN0
+b[0] => comb.IN1
+b[1] => comb.IN1
+b[2] => comb.IN1
+b[3] => comb.IN1
+c[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|xorop:o4
+a[0] => comb.IN0
+a[1] => comb.IN0
+a[2] => comb.IN0
+a[3] => comb.IN0
+b[0] => comb.IN1
+b[1] => comb.IN1
+b[2] => comb.IN1
+b[3] => comb.IN1
+c[0] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c[1] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c[2] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+c[3] <= comb.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|main_demos|main:testme|mux_full:o5
+fout[0] <= mux_base:calcbit0.port0
+fout[1] <= mux_base:calcbit1.port0
+fout[2] <= mux_base:calcbit2.port0
+fout[3] <= mux_base:calcbit3.port0
+selector[0] => selector[0].IN4
+selector[1] => selector[1].IN4
+adder[0] => adder[0].IN1
+adder[1] => adder[1].IN1
+adder[2] => adder[2].IN1
+adder[3] => adder[3].IN1
+subtractor[0] => subtractor[0].IN1
+subtractor[1] => subtractor[1].IN1
+subtractor[2] => subtractor[2].IN1
+subtractor[3] => subtractor[3].IN1
+andop[0] => andop[0].IN1
+andop[1] => andop[1].IN1
+andop[2] => andop[2].IN1
+andop[3] => andop[3].IN1
+xorop[0] => xorop[0].IN1
+xorop[1] => xorop[1].IN1
+xorop[2] => xorop[2].IN1
+xorop[3] => xorop[3].IN1
+
+
+|main_demos|main:testme|mux_full:o5|mux_base:calcbit0
+f <= result.DB_MAX_OUTPUT_PORT_TYPE
+s0 => a2.IN0
+s0 => a4.IN0
+s0 => a1.IN0
+s0 => a3.IN0
+s1 => a3.IN1
+s1 => a4.IN1
+s1 => a1.IN1
+s1 => a2.IN1
+b0 => a1.IN2
+b1 => a2.IN2
+b2 => a3.IN2
+b3 => a4.IN2
+
+
+|main_demos|main:testme|mux_full:o5|mux_base:calcbit1
+f <= result.DB_MAX_OUTPUT_PORT_TYPE
+s0 => a2.IN0
+s0 => a4.IN0
+s0 => a1.IN0
+s0 => a3.IN0
+s1 => a3.IN1
+s1 => a4.IN1
+s1 => a1.IN1
+s1 => a2.IN1
+b0 => a1.IN2
+b1 => a2.IN2
+b2 => a3.IN2
+b3 => a4.IN2
+
+
+|main_demos|main:testme|mux_full:o5|mux_base:calcbit2
+f <= result.DB_MAX_OUTPUT_PORT_TYPE
+s0 => a2.IN0
+s0 => a4.IN0
+s0 => a1.IN0
+s0 => a3.IN0
+s1 => a3.IN1
+s1 => a4.IN1
+s1 => a1.IN1
+s1 => a2.IN1
+b0 => a1.IN2
+b1 => a2.IN2
+b2 => a3.IN2
+b3 => a4.IN2
+
+
+|main_demos|main:testme|mux_full:o5|mux_base:calcbit3
+f <= result.DB_MAX_OUTPUT_PORT_TYPE
+s0 => a2.IN0
+s0 => a4.IN0
+s0 => a1.IN0
+s0 => a3.IN0
+s1 => a3.IN1
+s1 => a4.IN1
+s1 => a1.IN1
+s1 => a2.IN1
+b0 => a1.IN2
+b1 => a2.IN2
+b2 => a3.IN2
+b3 => a4.IN2
+
+

@@ -1,0 +1,195 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\OnurSezer\Desktop\Notlar\PROJECT_1\sezer_onur_121044074\simulation\modelsim
+vadder
+Ic;>TAN_lFB^mz>Cj6>7Vh2
+V[0021MfYQ2B=52bNz2@Cz0
+Z1 dC:\Users\OnurSezer\Desktop\Notlar\PROJECT_1\sezer_onur_121044074\simulation\modelsim
+w1444362854
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/adder.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/adder.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-work work -O0
+!i10b 1
+!s100 Ik:ELKN3Jz0`c:2h^?MaK3
+!s85 0
+!s108 1444582607.073000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/adder.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/adder.v|
+!s101 -O0
+vandop
+Id_@@5MBm?O`dB7MTZP2k`1
+VNbHNhEjTX;_56i2:gFN323
+R1
+w1444262277
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/andop.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/andop.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 X`X[SFzKP7D6`ozj[mdHk1
+!s85 0
+!s108 1444582607.870000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/andop.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/andop.v|
+!s101 -O0
+vfull_adder
+IIzN9nD1H>]?m?VbQCHllM1
+VaneMUU0Ja^hCSV^GanK@l2
+R1
+w1444260172
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/full_adder.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/full_adder.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 VG7MS5G<`2NDU:aa6ah4D0
+!s85 0
+!s108 1444582608.183000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/full_adder.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/full_adder.v|
+!s101 -O0
+vmain
+Iha?QoW]=Se;6lkRBD[f681
+Vb9EoOS>EEil;ZNdHm3C8k0
+R1
+w1444388969
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 9Odf:f[fORLbY5>5k5[zA3
+!s85 0
+!s108 1444582608.979000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main.v|
+!s101 -O0
+vmain_demos
+IdfAHBEOe1ZCS@32YiY`7X1
+V6^jWKm=cNf7lfjPATYEA92
+R1
+w1444390190
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main_demos.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main_demos.v
+L0 15
+R2
+r1
+31
+R3
+!i10b 1
+!s100 WmnbUC3ll<mZ46GXZ2^^20
+!s85 0
+!s108 1444582609.265000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main_demos.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/main_demos.v|
+!s101 -O0
+vmux_base
+IHcSZ6eA1K>aQeP^HFDcVN1
+Vb8@SHQHDT7392]z;SZdVo1
+R1
+w1444259572
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_base.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_base.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 ;A4IGdITEPk?OEC3LNzBj3
+!s85 0
+!s108 1444582609.562000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_base.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_base.v|
+!s101 -O0
+vmux_full
+I>WnNW0?`HlSmTRZ^1HEDN0
+V0GSaX=KC`2P6WL]R1670H3
+R1
+w1444259598
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_full.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_full.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 @61eY0F^OHgS4BVM2d<h=1
+!s85 0
+!s108 1444582610.357000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_full.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/mux_full.v|
+!s101 -O0
+vsubtractor
+IUiaSC?OSzWS`KJe_f9O4I2
+V4[`gUDc5M]_c0a5UTzLT50
+R1
+w1444362850
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/subtractor.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/subtractor.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 QLBibnL]VaXX_788AJ=;81
+!s85 0
+!s108 1444582610.671000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/subtractor.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/subtractor.v|
+!s101 -O0
+vtest_main
+IYKaD^1E5<cEB[g81beFI`3
+VKW<HzVEKezCHQeSN:[REY2
+R1
+w1444389790
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/test_main.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/test_main.v
+L0 1
+R2
+r1
+31
+R3
+!i10b 1
+!s100 1;k6D4ZN6Z?WmI=DD<<TB0
+!s85 0
+!s108 1444582610.947000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/test_main.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/test_main.v|
+!s101 -O0
+vxorop
+!i10b 1
+!s100 :NJJ?TmPV27K_3Z_41QT30
+IiKFBF>]3gT4:4@Io1^C1N2
+VMb@4B[DGjP0QGQjXe`1913
+R1
+w1444262274
+8C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/xorop.v
+FC:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/xorop.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1444582611.221000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/xorop.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/PROJECT_1/sezer_onur_121044074/xorop.v|
+!s101 -O0
+R3

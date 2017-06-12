@@ -1,0 +1,16 @@
+transcript on
+if {[file exists rtl_work]} {
+	vdel -lib rtl_work -all
+}
+vlib rtl_work
+vmap work rtl_work
+
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/full_adder.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/adder.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/subtractor.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/andop.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/xorop.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/mux_base.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/mux_full.v}
+vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer {C:/Users/OnurSezer/Desktop/PROJE01_121044074_Onur_Sezer/main.v}
+

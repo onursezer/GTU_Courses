@@ -1,0 +1,88 @@
+# Reading C:/altera/13.1/modelsim_ase/tcl/vsim/pref.tcl 
+# do sezer_onur_121044074_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying c:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied c:\altera\13.1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/sezer_onur_121044074.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sezer_onur_121044074
+# 
+# Top level modules:
+# 	sezer_onur_121044074
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/alu.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/regMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module regMemory
+# 
+# Top level modules:
+# 	regMemory
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/dataMemory.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dataMemory
+# 
+# Top level modules:
+# 	dataMemory
+# vlog -vlog01compat -work work +incdir+C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074 {C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/PC.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+# 
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/alu.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/dataMemory.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module dataMemory
+# 
+# Top level modules:
+# 	dataMemory
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/PC.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module PC
+# 
+# Top level modules:
+# 	PC
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/regMemory.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module regMemory
+# 
+# Top level modules:
+# 	regMemory
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/sezer_onur_121044074.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module sezer_onur_121044074
+# 
+# Top level modules:
+# 	sezer_onur_121044074
+vlog -reportprogress 300 -work work C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/test.v
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test
+# 
+# Top level modules:
+# 	test
+vsim -voptargs=+acc work.test
+# vsim -voptargs=+acc work.test 
+# Loading work.test
+# Loading work.sezer_onur_121044074
+# Loading work.PC
+# Loading work.regMemory
+# Loading work.alu
+# Loading work.dataMemory
+run

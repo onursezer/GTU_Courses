@@ -1,0 +1,122 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\OnurSezer\Desktop\Notlar\organizasyon\PROJECT4\sezer_onur_121044074\simulation\modelsim
+valu
+IcDB24D5`3LG8`k0;5nbch0
+VV7n[WcT[Lzk1Z;4Kd`aDF0
+Z1 dC:\Users\OnurSezer\Desktop\Notlar\organizasyon\PROJECT4\sezer_onur_121044074\simulation\modelsim
+w1451295195
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/alu.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/alu.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-work work -O0
+!i10b 1
+!s100 =HlM]jPg<Yo5SHGZ2?5Kc2
+!s85 0
+!s108 1451298389.097000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/alu.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/alu.v|
+!s101 -O0
+vdataMemory
+Izk1oWEQiB1W94GATzoOlB0
+VT]YTa=>n:0L>U4e7MO?iS3
+R1
+w1451260880
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/dataMemory.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/dataMemory.v
+L0 1
+R2
+r1
+31
+R3
+ndata@memory
+!i10b 1
+!s100 D>?9ZZZ_Am;4@i08?6;5T0
+!s85 0
+!s108 1451298389.316000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/dataMemory.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/dataMemory.v|
+!s101 -O0
+vPC
+I=YckG6kJN^6GW6M5zMMDl2
+V9;?c]eAI<CW3NEAbhV61d0
+R1
+w1451295540
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/PC.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/PC.v
+L0 1
+R2
+r1
+31
+R3
+n@p@c
+!i10b 1
+!s100 GOlEWbRYleodSj4?AmHBM1
+!s85 0
+!s108 1451298389.534000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/PC.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/PC.v|
+!s101 -O0
+vregMemory
+IJ56SF]T[26[4PFLR?V5g;2
+VS^zEgliRF_iT=R;2M`MU81
+R1
+w1451261456
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/regMemory.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/regMemory.v
+L0 1
+R2
+r1
+31
+R3
+nreg@memory
+!i10b 1
+!s100 @FNUHdFB2fS3WLdMHWh>42
+!s85 0
+!s108 1451298389.769000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/regMemory.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/regMemory.v|
+!s101 -O0
+vsezer_onur_121044074
+IXaGlA6i6KbJ>nk=d:k^X21
+V;DRMaCGKNf:J`iL8`ImgV1
+R1
+w1451295129
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/sezer_onur_121044074.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/sezer_onur_121044074.v
+L0 4
+R2
+r1
+31
+R3
+!i10b 1
+!s100 ?:T:L3AaaJkM[gFa0[Biz3
+!s85 0
+!s108 1451298389.972000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/sezer_onur_121044074.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/sezer_onur_121044074.v|
+!s101 -O0
+vtest
+!i10b 1
+!s100 `j`kcd[0o`Q_70VA04HaU1
+IB7PfDIz8ijENgVz>0dk;C3
+Vk<3<[f=78GX=_HO53D;7>3
+R1
+w1451297988
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/test.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/test.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1451298390.144000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/test.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT4/sezer_onur_121044074/test.v|
+!s101 -O0
+R3

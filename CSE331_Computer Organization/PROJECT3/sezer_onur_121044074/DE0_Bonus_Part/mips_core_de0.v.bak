@@ -1,0 +1,7 @@
+module mips_core_de0 (result, input_instruction);
+	output [31:0] result;
+	input [31:0] input_instruction;
+	reg [31:0] registers [0:31];
+	// your code ...
+	
+endmodule

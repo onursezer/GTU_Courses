@@ -1,0 +1,601 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// VENDOR "Altera"
+// PROGRAM "Quartus II 64-Bit"
+// VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
+
+// DATE "12/07/2015 11:40:07"
+
+// 
+// Device: Altera EP3C16F484C6 Package FBGA484
+// 
+
+// 
+// This Verilog file should be used for ModelSim-Altera (Verilog) only
+// 
+
+`timescale 1 ps/ 1 ps
+
+module mips_sim_de0 (
+	result_part_selector,
+	ssd_part1,
+	ssd_part2,
+	ssd_part3,
+	ssd_part4,
+	toggle_sw);
+input 	result_part_selector;
+output 	[6:0] ssd_part1;
+output 	[6:0] ssd_part2;
+output 	[6:0] ssd_part3;
+output 	[6:0] ssd_part4;
+input 	[3:0] toggle_sw;
+
+// Design Ports Information
+// result_part_selector	=>  Location: PIN_D2,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[0]	=>  Location: PIN_E11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[1]	=>  Location: PIN_F11,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[2]	=>  Location: PIN_H12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[3]	=>  Location: PIN_H13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[4]	=>  Location: PIN_G12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[5]	=>  Location: PIN_F12,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part1[6]	=>  Location: PIN_F13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[0]	=>  Location: PIN_A13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[1]	=>  Location: PIN_B13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[2]	=>  Location: PIN_C13,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[3]	=>  Location: PIN_A14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[4]	=>  Location: PIN_B14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[5]	=>  Location: PIN_E14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part2[6]	=>  Location: PIN_A15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[0]	=>  Location: PIN_D15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[1]	=>  Location: PIN_A16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[2]	=>  Location: PIN_B16,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[3]	=>  Location: PIN_E15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[4]	=>  Location: PIN_A17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[5]	=>  Location: PIN_B17,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part3[6]	=>  Location: PIN_F14,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[0]	=>  Location: PIN_B18,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[1]	=>  Location: PIN_F15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[2]	=>  Location: PIN_A19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[3]	=>  Location: PIN_B19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[4]	=>  Location: PIN_C19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[5]	=>  Location: PIN_D19,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// ssd_part4[6]	=>  Location: PIN_G15,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// toggle_sw[0]	=>  Location: PIN_J6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// toggle_sw[1]	=>  Location: PIN_H5,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// toggle_sw[2]	=>  Location: PIN_H6,	 I/O Standard: 2.5 V,	 Current Strength: Default
+// toggle_sw[3]	=>  Location: PIN_G4,	 I/O Standard: 2.5 V,	 Current Strength: Default
+
+
+wire gnd;
+wire vcc;
+wire unknown;
+
+assign gnd = 1'b0;
+assign vcc = 1'b1;
+assign unknown = 1'bx;
+
+tri1 devclrn;
+tri1 devpor;
+tri1 devoe;
+// synopsys translate_off
+initial $sdf_annotate("Project_6_1200mv_0c_v_slow.sdo");
+// synopsys translate_on
+
+wire \result_part_selector~input_o ;
+wire \toggle_sw[0]~input_o ;
+wire \toggle_sw[1]~input_o ;
+wire \toggle_sw[2]~input_o ;
+wire \toggle_sw[3]~input_o ;
+wire \ssd_part1[0]~output_o ;
+wire \ssd_part1[1]~output_o ;
+wire \ssd_part1[2]~output_o ;
+wire \ssd_part1[3]~output_o ;
+wire \ssd_part1[4]~output_o ;
+wire \ssd_part1[5]~output_o ;
+wire \ssd_part1[6]~output_o ;
+wire \ssd_part2[0]~output_o ;
+wire \ssd_part2[1]~output_o ;
+wire \ssd_part2[2]~output_o ;
+wire \ssd_part2[3]~output_o ;
+wire \ssd_part2[4]~output_o ;
+wire \ssd_part2[5]~output_o ;
+wire \ssd_part2[6]~output_o ;
+wire \ssd_part3[0]~output_o ;
+wire \ssd_part3[1]~output_o ;
+wire \ssd_part3[2]~output_o ;
+wire \ssd_part3[3]~output_o ;
+wire \ssd_part3[4]~output_o ;
+wire \ssd_part3[5]~output_o ;
+wire \ssd_part3[6]~output_o ;
+wire \ssd_part4[0]~output_o ;
+wire \ssd_part4[1]~output_o ;
+wire \ssd_part4[2]~output_o ;
+wire \ssd_part4[3]~output_o ;
+wire \ssd_part4[4]~output_o ;
+wire \ssd_part4[5]~output_o ;
+wire \ssd_part4[6]~output_o ;
+
+
+// Location: IOOBUF_X21_Y29_N23
+cycloneiii_io_obuf \ssd_part1[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[0]~output .bus_hold = "false";
+defparam \ssd_part1[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X21_Y29_N30
+cycloneiii_io_obuf \ssd_part1[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[1]~output .bus_hold = "false";
+defparam \ssd_part1[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N2
+cycloneiii_io_obuf \ssd_part1[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[2]~output .bus_hold = "false";
+defparam \ssd_part1[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X28_Y29_N30
+cycloneiii_io_obuf \ssd_part1[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[3]~output .bus_hold = "false";
+defparam \ssd_part1[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N9
+cycloneiii_io_obuf \ssd_part1[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[4]~output .bus_hold = "false";
+defparam \ssd_part1[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X28_Y29_N23
+cycloneiii_io_obuf \ssd_part1[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[5]~output .bus_hold = "false";
+defparam \ssd_part1[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N16
+cycloneiii_io_obuf \ssd_part1[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part1[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part1[6]~output .bus_hold = "false";
+defparam \ssd_part1[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X21_Y29_N2
+cycloneiii_io_obuf \ssd_part2[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[0]~output .bus_hold = "false";
+defparam \ssd_part2[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X21_Y29_N9
+cycloneiii_io_obuf \ssd_part2[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[1]~output .bus_hold = "false";
+defparam \ssd_part2[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y29_N2
+cycloneiii_io_obuf \ssd_part2[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[2]~output .bus_hold = "false";
+defparam \ssd_part2[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y29_N23
+cycloneiii_io_obuf \ssd_part2[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[3]~output .bus_hold = "false";
+defparam \ssd_part2[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X23_Y29_N30
+cycloneiii_io_obuf \ssd_part2[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[4]~output .bus_hold = "false";
+defparam \ssd_part2[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X28_Y29_N16
+cycloneiii_io_obuf \ssd_part2[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[5]~output .bus_hold = "false";
+defparam \ssd_part2[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X26_Y29_N23
+cycloneiii_io_obuf \ssd_part2[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part2[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part2[6]~output .bus_hold = "false";
+defparam \ssd_part2[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y29_N30
+cycloneiii_io_obuf \ssd_part3[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[0]~output .bus_hold = "false";
+defparam \ssd_part3[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y29_N30
+cycloneiii_io_obuf \ssd_part3[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[1]~output .bus_hold = "false";
+defparam \ssd_part3[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X28_Y29_N2
+cycloneiii_io_obuf \ssd_part3[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[2]~output .bus_hold = "false";
+defparam \ssd_part3[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y29_N2
+cycloneiii_io_obuf \ssd_part3[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[3]~output .bus_hold = "false";
+defparam \ssd_part3[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y29_N16
+cycloneiii_io_obuf \ssd_part3[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[4]~output .bus_hold = "false";
+defparam \ssd_part3[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X30_Y29_N23
+cycloneiii_io_obuf \ssd_part3[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[5]~output .bus_hold = "false";
+defparam \ssd_part3[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X37_Y29_N2
+cycloneiii_io_obuf \ssd_part3[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part3[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part3[6]~output .bus_hold = "false";
+defparam \ssd_part3[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y29_N23
+cycloneiii_io_obuf \ssd_part4[0]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[0]~output .bus_hold = "false";
+defparam \ssd_part4[0]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X39_Y29_N16
+cycloneiii_io_obuf \ssd_part4[1]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[1]~output .bus_hold = "false";
+defparam \ssd_part4[1]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y29_N9
+cycloneiii_io_obuf \ssd_part4[2]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[2]~output .bus_hold = "false";
+defparam \ssd_part4[2]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X32_Y29_N2
+cycloneiii_io_obuf \ssd_part4[3]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[3]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[3]~output .bus_hold = "false";
+defparam \ssd_part4[3]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X37_Y29_N23
+cycloneiii_io_obuf \ssd_part4[4]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[4]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[4]~output .bus_hold = "false";
+defparam \ssd_part4[4]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X37_Y29_N30
+cycloneiii_io_obuf \ssd_part4[5]~output (
+	.i(gnd),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[5]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[5]~output .bus_hold = "false";
+defparam \ssd_part4[5]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOOBUF_X39_Y29_N30
+cycloneiii_io_obuf \ssd_part4[6]~output (
+	.i(vcc),
+	.oe(vcc),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\ssd_part4[6]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \ssd_part4[6]~output .bus_hold = "false";
+defparam \ssd_part4[6]~output .open_drain_output = "false";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y25_N1
+cycloneiii_io_ibuf \result_part_selector~input (
+	.i(result_part_selector),
+	.ibar(gnd),
+	.o(\result_part_selector~input_o ));
+// synopsys translate_off
+defparam \result_part_selector~input .bus_hold = "false";
+defparam \result_part_selector~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y24_N1
+cycloneiii_io_ibuf \toggle_sw[0]~input (
+	.i(toggle_sw[0]),
+	.ibar(gnd),
+	.o(\toggle_sw[0]~input_o ));
+// synopsys translate_off
+defparam \toggle_sw[0]~input .bus_hold = "false";
+defparam \toggle_sw[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y27_N1
+cycloneiii_io_ibuf \toggle_sw[1]~input (
+	.i(toggle_sw[1]),
+	.ibar(gnd),
+	.o(\toggle_sw[1]~input_o ));
+// synopsys translate_off
+defparam \toggle_sw[1]~input .bus_hold = "false";
+defparam \toggle_sw[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y25_N22
+cycloneiii_io_ibuf \toggle_sw[2]~input (
+	.i(toggle_sw[2]),
+	.ibar(gnd),
+	.o(\toggle_sw[2]~input_o ));
+// synopsys translate_off
+defparam \toggle_sw[2]~input .bus_hold = "false";
+defparam \toggle_sw[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+// Location: IOIBUF_X0_Y23_N8
+cycloneiii_io_ibuf \toggle_sw[3]~input (
+	.i(toggle_sw[3]),
+	.ibar(gnd),
+	.o(\toggle_sw[3]~input_o ));
+// synopsys translate_off
+defparam \toggle_sw[3]~input .bus_hold = "false";
+defparam \toggle_sw[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+assign ssd_part1[0] = \ssd_part1[0]~output_o ;
+
+assign ssd_part1[1] = \ssd_part1[1]~output_o ;
+
+assign ssd_part1[2] = \ssd_part1[2]~output_o ;
+
+assign ssd_part1[3] = \ssd_part1[3]~output_o ;
+
+assign ssd_part1[4] = \ssd_part1[4]~output_o ;
+
+assign ssd_part1[5] = \ssd_part1[5]~output_o ;
+
+assign ssd_part1[6] = \ssd_part1[6]~output_o ;
+
+assign ssd_part2[0] = \ssd_part2[0]~output_o ;
+
+assign ssd_part2[1] = \ssd_part2[1]~output_o ;
+
+assign ssd_part2[2] = \ssd_part2[2]~output_o ;
+
+assign ssd_part2[3] = \ssd_part2[3]~output_o ;
+
+assign ssd_part2[4] = \ssd_part2[4]~output_o ;
+
+assign ssd_part2[5] = \ssd_part2[5]~output_o ;
+
+assign ssd_part2[6] = \ssd_part2[6]~output_o ;
+
+assign ssd_part3[0] = \ssd_part3[0]~output_o ;
+
+assign ssd_part3[1] = \ssd_part3[1]~output_o ;
+
+assign ssd_part3[2] = \ssd_part3[2]~output_o ;
+
+assign ssd_part3[3] = \ssd_part3[3]~output_o ;
+
+assign ssd_part3[4] = \ssd_part3[4]~output_o ;
+
+assign ssd_part3[5] = \ssd_part3[5]~output_o ;
+
+assign ssd_part3[6] = \ssd_part3[6]~output_o ;
+
+assign ssd_part4[0] = \ssd_part4[0]~output_o ;
+
+assign ssd_part4[1] = \ssd_part4[1]~output_o ;
+
+assign ssd_part4[2] = \ssd_part4[2]~output_o ;
+
+assign ssd_part4[3] = \ssd_part4[3]~output_o ;
+
+assign ssd_part4[4] = \ssd_part4[4]~output_o ;
+
+assign ssd_part4[5] = \ssd_part4[5]~output_o ;
+
+assign ssd_part4[6] = \ssd_part4[6]~output_o ;
+
+endmodule

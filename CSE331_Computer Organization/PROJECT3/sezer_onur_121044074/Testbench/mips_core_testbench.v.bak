@@ -1,0 +1,15 @@
+module mips_core_testbench (result, input_instruction, rs_content, rt_content);
+	output [31:0] result;
+	input [31:0] input_instruction;
+	input [31:0] rs_content;
+	input [31:0] rt_content;
+	// your code ...
+	// this is an algorithm you can use but not mandatory
+	// you can design your own algorithm of course
+
+	// algorithm:
+	// decode instruction --> opcode, rs, rt, rd, shamt, funct, immediate
+	// identify instruction type (R-type or I-type) with opcode
+	// determine the corresponding instruction 
+	// compute the result value using only rs_content or both rs_content and rt_content
+endmodule

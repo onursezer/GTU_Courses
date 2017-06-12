@@ -1,0 +1,15 @@
+module test();
+
+	input [3:0]a;
+	input [3:0]b;
+	input[1:0]s;
+	output[3:0]resA;
+	output[3:0]resS;
+	output[3:0]resAn;
+	output[3:0]resX;
+	input e;
+	main asdasd(a,b,s,resA,resS,resAn,resX,e);
+
+
+
+endmodule

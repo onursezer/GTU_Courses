@@ -1,0 +1,43 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\OnurSezer\Desktop\Notlar\organizasyon\PROJECT3\sezer_onur_121044074\Testbench\simulation\modelsim
+vmips_core_testbench
+IOmnjj>`dQ?[`^@Me<4O=70
+V^H5H2[oV6SM;O9HGkmSnh1
+Z1 dC:\Users\OnurSezer\Desktop\Notlar\organizasyon\PROJECT3\sezer_onur_121044074\Testbench\simulation\modelsim
+w1449493370
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_testbench.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_testbench.v
+L0 1
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-work work -O0
+!i10b 1
+!s100 [Q[7mQW<UWIDZUmoi9:L]1
+!s85 0
+!s108 1449494835.067000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_testbench.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_testbench.v|
+!s101 -O0
+vmips_core_tester
+!i10b 1
+!s100 K;:<KPhNoUiaJW2gAhdmB2
+Ib:8l0M13U_FCBiR3iSdzc1
+V5CGHOT5JI`mF8Vf:j>iWL0
+R1
+w1449494829
+8C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_tester.v
+FC:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_tester.v
+L0 1
+R2
+r1
+!s85 0
+31
+!s108 1449494835.833000
+!s107 C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_tester.v|
+!s90 -reportprogress|300|-work|work|C:/Users/OnurSezer/Desktop/Notlar/organizasyon/PROJECT3/sezer_onur_121044074/Testbench/mips_core_tester.v|
+!s101 -O0
+R3

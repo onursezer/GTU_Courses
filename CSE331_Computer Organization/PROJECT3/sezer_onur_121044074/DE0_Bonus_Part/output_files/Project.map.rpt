@@ -1,0 +1,1569 @@
+Analysis & Synthesis report for Project
+Mon Dec 07 12:49:30 2015
+Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Logic Cells Representing Combinational Loops
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++---------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                    ;
++------------------------------------+--------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Mon Dec 07 12:49:30 2015      ;
+; Quartus II 64-Bit Version          ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
+; Revision Name                      ; Project                                    ;
+; Top-level Entity Name              ; mips_sim_de0                               ;
+; Family                             ; Cyclone III                                ;
+; Total logic elements               ; 763                                        ;
+;     Total combinational functions  ; 763                                        ;
+;     Dedicated logic registers      ; 0                                          ;
+; Total registers                    ; 0                                          ;
+; Total pins                         ; 33                                         ;
+; Total virtual pins                 ; 0                                          ;
+; Total memory bits                  ; 0                                          ;
+; Embedded Multiplier 9-bit elements ; 0                                          ;
+; Total PLLs                         ; 0                                          ;
++------------------------------------+--------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP3C16F484C6       ;                    ;
+; Top-level entity name                                                      ; mips_sim_de0       ; Project            ;
+; Family name                                                                ; Cyclone III        ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ; < 0.1%      ;
+;     Processors 5-8         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                  ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                    ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+; mips_sim.v                       ; yes             ; User Verilog HDL File  ; C:/Users/OnurSezer/Desktop/P3_2/mips_sim.v      ;         ;
+; mux16x1.v                        ; yes             ; User Verilog HDL File  ; C:/Users/OnurSezer/Desktop/P3_2/mux16x1.v       ;         ;
+; mips_core_de0.v                  ; yes             ; User Verilog HDL File  ; C:/Users/OnurSezer/Desktop/P3_2/mips_core_de0.v ;         ;
+; binary_to_ssd.v                  ; yes             ; User Verilog HDL File  ; C:/Users/OnurSezer/Desktop/P3_2/binary_to_ssd.v ;         ;
+; mips_sim_de0.v                   ; yes             ; User Verilog HDL File  ; C:/Users/OnurSezer/Desktop/P3_2/mips_sim_de0.v  ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                ;
++---------------------------------------------+--------------------------------------------------------------+
+; Resource                                    ; Usage                                                        ;
++---------------------------------------------+--------------------------------------------------------------+
+; Estimated Total logic elements              ; 763                                                          ;
+;                                             ;                                                              ;
+; Total combinational functions               ; 763                                                          ;
+; Logic element usage by number of LUT inputs ;                                                              ;
+;     -- 4 input functions                    ; 429                                                          ;
+;     -- 3 input functions                    ; 282                                                          ;
+;     -- <=2 input functions                  ; 52                                                           ;
+;                                             ;                                                              ;
+; Logic elements by mode                      ;                                                              ;
+;     -- normal mode                          ; 701                                                          ;
+;     -- arithmetic mode                      ; 62                                                           ;
+;                                             ;                                                              ;
+; Total registers                             ; 0                                                            ;
+;     -- Dedicated logic registers            ; 0                                                            ;
+;     -- I/O registers                        ; 0                                                            ;
+;                                             ;                                                              ;
+; I/O pins                                    ; 33                                                           ;
+; Embedded Multiplier 9-bit elements          ; 0                                                            ;
+; Maximum fan-out node                        ; mips_sim:start_sim|mips_core_de0:run|registers.data_a[0]~110 ;
+; Maximum fan-out                             ; 82                                                           ;
+; Total fan-out                               ; 2725                                                         ;
+; Average fan-out                             ; 3.29                                                         ;
++---------------------------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                        ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+; |mips_sim_de0              ; 763 (0)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 33   ; 0            ; |mips_sim_de0                                      ; work         ;
+;    |mips_sim:start_sim|    ; 763 (28)          ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim                   ; work         ;
+;       |binary_to_ssd:a|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:a   ; work         ;
+;       |binary_to_ssd:b|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:b   ; work         ;
+;       |binary_to_ssd:c|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:c   ; work         ;
+;       |binary_to_ssd:d|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:d   ; work         ;
+;       |binary_to_ssd:e|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:e   ; work         ;
+;       |binary_to_ssd:f|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:f   ; work         ;
+;       |binary_to_ssd:g|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:g   ; work         ;
+;       |binary_to_ssd:h|    ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|binary_to_ssd:h   ; work         ;
+;       |mips_core_de0:run|  ; 665 (665)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run ; work         ;
+;       |mux16x1:sel_in|     ; 14 (14)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mips_sim_de0|mips_sim:start_sim|mux16x1:sel_in    ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                            ;
++-----------------------------------------------------+-------------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                             ; Free of Timing Hazards ;
++-----------------------------------------------------+-------------------------------------------------+------------------------+
+; mips_sim:start_sim|mips_core_de0:run|result[0]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[1]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[2]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[3]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[16]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[17]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[18]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[19]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[4]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[5]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[6]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[7]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[20]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[21]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[22]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[23]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[8]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[9]      ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[10]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[11]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[24]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[25]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[26]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[27]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[12]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[13]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[14]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[15]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[28]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[29]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[30]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; mips_sim:start_sim|mips_core_de0:run|result[31]     ; mips_sim:start_sim|mips_core_de0:run|result[31] ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                                                 ;                        ;
++-----------------------------------------------------+-------------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++--------------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                       ;
++--------------------------------------------------------------+-----+
+; Logic Cell Name                                              ;     ;
++--------------------------------------------------------------+-----+
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[0]~4   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[1]~6   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[2]~3   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[3]~2   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[16]~31 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[17]~30 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[18]~29 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[19]~18 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[4]~11  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[5]~9   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[6]~35  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[7]~34  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[20]~28 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[21]~27 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[22]~26 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[23]~25 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[8]~20  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[9]~19  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[10]~14 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[11]~13 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[24]~24 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[25]~21 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[26]~23 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[27]~15 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[12]~17 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[13]~33 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[14]~16 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[15]~32 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[28]~22 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[29]~12 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[30]~10 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[31]~0  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1049          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1037          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1036          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1025          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1052          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1051          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1048          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1042          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1043          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1039          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1050          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1044          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1027          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~6           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1029          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1038          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1047          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1034          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1033          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1032          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~4           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1031          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1040          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1045          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1026          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1024          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~1            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1035          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1053          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1046          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1041          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1030          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1028          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers~1054          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~8           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~0           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~7           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~9           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~18           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~2                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[2]~1   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~3           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~30                 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~2           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~1                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~15           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~1           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~4                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~0            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~17           ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add0~23                 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~6                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~3            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~8            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add0~17                 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~5                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~2            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~7            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add0~19                 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~11                 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add1~5                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftLeft0~5            ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add0~9                  ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[5]~8   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|registers.data_a[5]~7   ;     ;
+; mips_sim:start_sim|mips_core_de0:run|Add2~29                 ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~10          ;     ;
+; mips_sim:start_sim|mips_core_de0:run|ShiftRight0~13          ;     ;
+; Number of logic cells representing combinational loops       ; 179 ;
++--------------------------------------------------------------+-----+
+Table restricted to first 100 entries. Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+; 20:1               ; 7 bits    ; 91 LEs        ; 56 LEs               ; 35 LEs                 ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[18] ;
+; 20:1               ; 8 bits    ; 104 LEs       ; 56 LEs               ; 48 LEs                 ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[10] ;
+; 21:1               ; 2 bits    ; 28 LEs        ; 16 LEs               ; 12 LEs                 ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[24] ;
+; 21:1               ; 4 bits    ; 56 LEs        ; 32 LEs               ; 24 LEs                 ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[5]  ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 20 LEs               ; 8 LEs                  ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[29] ;
+; 22:1               ; 2 bits    ; 28 LEs        ; 18 LEs               ; 10 LEs                 ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[2]  ;
+; 23:1               ; 2 bits    ; 30 LEs        ; 20 LEs               ; 10 LEs                 ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[30] ;
+; 19:1               ; 2 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |mips_sim_de0|mips_sim:start_sim|mips_core_de0:run|registers.data_a[26] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:07     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+    Info: Processing started: Mon Dec 07 12:49:20 2015
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Project -c Project
+Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (12021): Found 1 design units, including 1 entities, in source file mips_sim.v
+    Info (12023): Found entity 1: mips_sim
+Info (12021): Found 1 design units, including 1 entities, in source file mux16x1.v
+    Info (12023): Found entity 1: mux16x1
+Info (12021): Found 1 design units, including 1 entities, in source file mips_core_de0.v
+    Info (12023): Found entity 1: mips_core_de0
+Info (12021): Found 1 design units, including 1 entities, in source file binary_to_ssd.v
+    Info (12023): Found entity 1: binary_to_ssd
+Info (12021): Found 1 design units, including 1 entities, in source file mips_sim_de0.v
+    Info (12023): Found entity 1: mips_sim_de0
+Info (12127): Elaborating entity "mips_sim_de0" for the top level hierarchy
+Info (12128): Elaborating entity "mips_sim" for hierarchy "mips_sim:start_sim"
+Info (12128): Elaborating entity "mux16x1" for hierarchy "mips_sim:start_sim|mux16x1:sel_in"
+Info (12128): Elaborating entity "mips_core_de0" for hierarchy "mips_sim:start_sim|mips_core_de0:run"
+Warning (10036): Verilog HDL or VHDL warning at mips_core_de0.v(7): object "shamt" assigned a value but never read
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(65): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(67): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(67): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(68): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(70): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(72): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(72): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(73): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(75): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(77): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(77): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(78): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(80): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(82): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(82): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(83): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(85): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(87): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(87): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(88): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(90): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(92): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(92): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(93): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(95): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(97): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(97): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(98): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(100): variable "funct" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(102): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(102): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(103): variable "rd" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(110): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(110): variable "imme32" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(111): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(115): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(115): variable "imme32" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(116): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(120): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(120): variable "imme32" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(121): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(125): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(125): variable "imme32" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(126): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(130): variable "rs" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(130): variable "imme32" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(131): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(135): variable "imme32" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10235): Verilog HDL Always Construct warning at mips_core_de0.v(136): variable "rt" is read inside the Always Construct but isn't in the Always Construct's Event Control
+Warning (10240): Verilog HDL Always Construct warning at mips_core_de0.v(62): inferring latch(es) for variable "result", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "result[0]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[1]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[2]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[3]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[4]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[5]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[6]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[7]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[8]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[9]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[10]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[11]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[12]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[13]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[14]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[15]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[16]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[17]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[18]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[19]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[20]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[21]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[22]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[23]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[24]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[25]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[26]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[27]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[28]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[29]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[30]" at mips_core_de0.v(108)
+Info (10041): Inferred latch for "result[31]" at mips_core_de0.v(108)
+Info (12128): Elaborating entity "binary_to_ssd" for hierarchy "mips_sim:start_sim|binary_to_ssd:a"
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~0" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~2" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~3" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~4" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~5" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~6" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~7" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~8" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~9" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~10" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~11" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~12" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~13" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~14" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~15" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~16" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~17" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~18" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~19" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~20" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~21" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~22" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~23" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~24" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~25" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~26" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~27" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~28" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~29" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~30" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~31" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~32" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~33" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~34" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~35" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~36" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~37" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~38" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~39" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~40" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~41" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~42" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~43" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~44" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~45" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~46" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~47" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~48" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~49" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~50" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~51" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~52" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~53" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~54" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~55" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~56" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~57" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~58" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~59" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~60" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~61" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~62" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~63" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~64" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~65" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~66" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~67" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~68" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~69" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~70" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~71" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~72" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~73" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~74" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~75" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~76" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~77" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~78" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~79" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~80" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~81" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~82" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~83" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~84" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~85" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~86" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~87" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~88" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~89" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~90" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~91" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~92" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~93" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~94" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~95" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~96" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~97" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~98" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~99" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~100" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~101" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~102" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~103" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~104" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~105" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~106" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~107" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~108" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~109" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~110" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~111" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~112" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~113" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~114" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~115" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~116" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~117" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~118" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~119" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~120" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~121" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~122" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~123" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~124" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~125" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~126" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~127" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~128" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~129" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~130" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~131" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~132" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~133" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~134" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~135" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~136" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~137" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~138" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~139" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~140" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~141" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~142" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~143" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~144" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~145" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~146" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~147" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~148" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~149" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~150" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~151" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~152" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~153" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~154" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~155" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~156" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~157" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~158" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~159" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~160" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~161" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~162" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~163" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~164" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~165" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~166" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~167" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~168" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~169" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~170" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~171" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~172" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~173" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~174" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~175" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~176" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~177" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~178" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~179" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~180" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~181" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~182" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~183" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~184" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~185" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~186" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~187" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~188" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~189" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~190" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~191" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~192" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~193" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~194" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~195" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~196" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~197" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~198" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~199" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~200" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~201" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~202" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~203" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~204" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~205" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~206" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~207" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~208" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~209" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~210" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~211" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~212" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~213" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~214" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~215" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~216" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~217" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~218" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~219" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~220" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~221" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~222" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~223" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~224" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~225" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~226" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~227" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~228" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~229" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~230" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~231" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~232" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~233" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~234" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~235" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~236" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~237" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~238" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~239" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~240" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~241" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~242" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~243" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~244" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~245" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~246" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~247" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~248" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~249" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~250" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~251" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~252" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~253" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~254" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~255" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~256" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~257" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~258" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~259" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~260" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~261" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~262" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~263" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~264" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~265" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~266" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~267" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~268" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~269" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~270" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~271" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~272" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~273" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~274" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~275" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~276" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~277" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~278" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~279" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~280" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~281" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~282" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~283" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~284" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~285" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~286" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~287" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~288" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~289" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~290" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~291" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~292" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~293" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~294" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~295" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~296" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~297" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~298" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~299" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~300" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~301" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~302" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~303" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~304" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~305" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~306" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~307" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~308" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~309" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~310" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~311" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~312" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~313" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~314" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~315" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~316" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~317" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~318" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~319" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~320" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~321" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~322" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~323" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~324" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~325" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~326" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~327" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~328" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~329" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~330" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~331" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~332" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~333" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~334" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~335" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~336" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~337" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~338" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~339" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~340" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~341" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~342" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~343" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~344" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~345" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~346" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~347" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~348" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~349" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~350" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~351" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~352" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~353" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~354" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~355" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~356" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~357" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~358" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~359" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~360" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~361" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~362" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~363" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~364" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~365" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~366" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~367" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~368" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~369" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~370" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~371" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~372" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~373" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~374" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~375" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~376" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~377" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~378" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~379" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~380" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~381" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~382" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~383" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~384" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~385" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~386" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~387" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~388" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~389" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~390" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~391" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~392" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~393" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~394" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~395" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~396" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~397" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~398" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~399" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~400" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~401" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~402" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~403" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~404" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~405" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~406" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~407" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~408" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~409" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~410" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~411" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~412" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~413" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~414" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~415" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~416" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~417" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~418" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~419" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~420" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~421" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~422" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~423" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~424" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~425" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~426" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~427" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~428" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~429" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~430" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~431" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~432" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~433" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~434" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~435" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~436" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~437" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~438" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~439" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~440" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~441" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~442" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~443" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~444" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~445" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~446" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~447" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~448" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~449" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~450" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~451" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~452" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~453" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~454" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~455" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~456" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~457" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~458" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~459" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~460" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~461" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~462" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~463" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~464" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~465" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~466" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~467" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~468" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~469" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~470" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~471" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~472" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~473" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~474" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~475" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~476" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~477" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~478" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~479" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~480" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~481" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~482" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~483" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~484" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~485" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~486" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~487" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~488" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~489" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~490" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~491" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~492" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~493" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~494" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~495" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~496" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~497" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~498" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~499" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~500" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~501" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~502" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~503" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~504" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~505" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~506" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~507" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~508" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~509" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~510" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~511" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~512" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~513" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~514" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~515" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~516" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~517" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~518" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~519" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~520" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~521" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~522" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~523" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~524" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~525" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~526" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~527" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~528" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~529" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~530" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~531" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~532" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~533" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~534" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~535" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~536" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~537" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~538" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~539" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~540" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~541" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~542" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~543" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~544" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~545" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~546" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~547" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~548" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~549" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~550" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~551" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~552" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~553" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~554" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~555" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~556" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~557" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~558" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~559" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~560" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~561" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~562" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~563" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~564" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~565" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~566" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~567" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~568" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~569" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~570" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~571" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~572" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~573" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~574" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~575" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~576" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~577" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~578" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~579" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~580" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~581" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~582" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~583" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~584" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~585" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~586" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~587" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~588" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~589" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~590" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~591" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~592" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~593" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~594" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~595" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~596" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~597" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~598" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~599" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~600" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~601" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~602" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~603" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~604" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~605" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~606" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~607" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~608" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~609" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~610" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~611" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~612" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~613" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~614" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~615" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~616" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~617" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~618" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~619" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~620" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~621" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~622" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~623" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~624" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~625" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~626" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~627" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~628" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~629" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~630" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~631" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~632" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~633" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~634" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~635" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~636" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~637" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~638" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~639" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~640" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~641" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~642" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~643" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~644" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~645" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~646" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~647" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~648" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~649" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~650" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~651" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~652" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~653" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~654" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~655" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~656" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~657" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~658" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~659" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~660" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~661" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~662" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~663" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~664" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~665" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~666" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~667" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~668" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~669" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~670" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~671" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~672" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~673" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~674" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~675" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~676" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~677" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~678" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~679" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~680" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~681" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~682" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~683" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~684" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~685" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~686" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~687" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~688" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~689" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~690" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~691" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~692" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~693" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~694" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~695" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~696" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~697" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~698" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~699" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~700" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~701" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~702" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~703" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~704" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~705" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~706" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~707" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~708" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~709" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~710" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~711" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~712" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~713" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~714" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~715" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~716" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~717" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~718" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~719" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~720" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~721" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~722" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~723" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~724" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~725" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~726" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~727" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~728" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~729" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~730" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~731" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~732" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~733" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~734" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~735" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~736" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~737" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~738" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~739" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~740" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~741" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~742" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~743" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~744" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~745" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~746" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~747" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~748" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~749" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~750" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~751" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~752" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~753" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~754" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~755" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~756" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~757" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~758" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~759" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~760" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~761" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~762" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~763" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~764" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~765" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~766" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~767" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~768" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~769" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~770" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~771" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~772" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~773" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~774" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~775" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~776" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~777" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~778" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~779" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~780" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~781" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~782" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~783" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~784" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~785" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~786" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~787" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~788" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~789" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~790" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~791" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~792" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~793" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~794" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~795" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~796" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~797" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~798" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~799" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~800" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~801" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~802" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~803" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~804" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~805" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~806" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~807" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~808" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~809" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~810" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~811" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~812" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~813" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~814" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~815" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~816" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~817" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~818" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~819" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~820" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~821" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~822" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~823" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~824" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~825" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~826" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~827" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~828" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~829" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~830" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~831" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~832" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~833" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~834" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~835" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~836" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~837" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~838" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~839" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~840" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~841" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~842" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~843" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~844" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~845" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~846" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~847" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~848" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~849" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~850" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~851" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~852" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~853" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~854" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~855" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~856" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~857" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~858" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~859" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~860" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~861" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~862" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~863" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~864" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~865" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~866" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~867" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~868" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~869" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~870" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~871" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~872" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~873" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~874" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~875" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~876" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~877" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~878" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~879" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~880" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~881" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~882" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~883" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~884" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~885" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~886" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~887" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~888" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~889" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~890" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~891" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~892" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~893" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~894" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~895" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~896" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~897" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~898" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~899" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~900" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~901" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~902" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~903" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~904" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~905" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~906" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~907" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~908" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~909" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~910" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~911" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~912" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~913" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~914" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~915" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~916" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~917" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~918" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~919" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~920" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~921" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~922" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~923" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~924" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~925" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~926" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~927" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~928" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~929" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~930" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~931" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~932" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~933" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~934" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~935" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~936" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~937" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~938" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~939" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~940" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~941" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~942" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~943" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~944" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~945" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~946" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~947" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~948" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~949" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~950" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~951" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~952" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~953" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~954" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~955" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~956" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~957" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~958" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~959" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~960" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~961" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~962" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~963" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~964" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~965" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~966" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~967" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~968" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~969" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~970" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~971" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~972" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~973" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~974" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~975" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~976" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~977" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~978" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~979" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~980" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~981" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~982" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~983" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~984" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~985" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~986" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~987" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~988" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~989" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~990" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~991" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~992" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~993" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~994" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~995" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~996" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~997" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~998" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~999" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1000" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1001" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1002" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1003" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1004" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1005" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1006" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1007" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1008" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1009" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1010" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1011" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1012" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1013" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1014" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1015" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1016" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1017" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1018" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1019" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1020" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1021" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1022" is permanently enabled
+Warning (14026): LATCH primitive "mips_sim:start_sim|mips_core_de0:run|registers~1023" is permanently enabled
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 796 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 5 input pins
+    Info (21059): Implemented 28 output pins
+    Info (21061): Implemented 763 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1075 warnings
+    Info: Peak virtual memory: 521 megabytes
+    Info: Processing ended: Mon Dec 07 12:49:30 2015
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:10
+
+
