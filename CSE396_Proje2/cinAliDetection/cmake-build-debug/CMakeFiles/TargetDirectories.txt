@@ -1,0 +1,3 @@
+/home/onur/Desktop/cinAliDetection/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/onur/Desktop/cinAliDetection/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/onur/Desktop/cinAliDetection/cmake-build-debug/CMakeFiles/cinAliDetection.dir
